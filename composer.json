@@ -8,7 +8,8 @@
 
     "autoload": {
     	"psr-4":{
-    		"Nogoodgamez\\Fetcher\\": "fetcher/"
+    		"Nogoodgamez\\Fetcher\\": "fetcher/",
+            "Nogoodgamez\\app\\model\\": "app/models"
         },
         
         "files": ["fetcher/helpers.php"]

@@ -1,5 +1,6 @@
 <?php
 
+
 class BaseController
 {	
 	private $model;
