@@ -20,38 +20,30 @@
 namespace Doctrine\MongoDB;
 
 /**
- * Configuration class for creating a Connection.
+ * Configuration
  *
- * @since  1.0
- * @author Jonathan H. Wage <jonwage@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.com
+ * @since       1.0
+ * @author      Jonathan H. Wage <jonwage@gmail.com>
  */
 class Configuration
 {
     /**
      * Array of attributes for this configuration instance.
      *
-     * @var array
+     * @var array $attributes
      */
     protected $attributes = array(
         'mongoCmd' => '$',
         'retryConnect' => 0,
-        'retryQuery' => 0,
+        'retryQuery' => 0
     );
-
-    /**
-     * Gets the logger callable.
-     *
-     * @return callable
-     */
-    public function getLoggerCallable()
-    {
-        return isset($this->attributes['loggerCallable']) ? $this->attributes['loggerCallable'] : null;
-    }
 
     /**
      * Set the logger callable.
      *
-     * @param callable $loggerCallable
+     * @param mixed $loggerCallable The logger callable.
      */
     public function setLoggerCallable($loggerCallable)
     {
@@ -59,33 +51,38 @@ class Configuration
     }
 
     /**
-     * Get the MongoDB command prefix.
+     * Gets the logger callable.
      *
-     * @deprecated 1.1 No longer supported; will be removed for 1.2
+     * @return mixed $loggerCallable The logger callable.
+     */
+    public function getLoggerCallable()
+    {
+        return isset($this->attributes['loggerCallable']) ?
+                $this->attributes['loggerCallable'] : null;
+    }
+
+    /**
+     * Get mongodb command prefix - '$' by default
      * @return string
      */
     public function getMongoCmd()
     {
-        trigger_error('MongoDB command prefix option is no longer used', E_USER_DEPRECATED);
         return $this->attributes['mongoCmd'];
     }
 
     /**
-     * Set the MongoDB command prefix.
-     *
-     * @deprecated 1.1 No longer supported; will be removed for 1.2
+     * Set mongodb command prefix
      * @param string $cmd
      */
     public function setMongoCmd($cmd)
     {
-        trigger_error('MongoDB command prefix option is no longer used', E_USER_DEPRECATED);
         $this->attributes['mongoCmd'] = $cmd;
     }
 
     /**
-     * Get the number of times to retry connection attempts after an exception.
+     * Get number of times to retry connect when errors occur.
      *
-     * @return integer
+     * @return integer The number of times to retry.
      */
     public function getRetryConnect()
     {
@@ -93,7 +90,7 @@ class Configuration
     }
 
     /**
-     * Set the number of times to retry connection attempts after an exception.
+     * Set number of times to retry connect when errors occur.
      *
      * @param boolean|integer $retryConnect
      */
@@ -103,9 +100,9 @@ class Configuration
     }
 
     /**
-     * Get the number of times to retry queries after an exception.
+     * Get number of times to retry queries when they fail.
      *
-     * @return integer
+     * @return integer The number of times to retry queries.
      */
     public function getRetryQuery()
     {
@@ -113,9 +110,9 @@ class Configuration
     }
 
     /**
-     * Set the number of times to retry queries after an exception.
+     * Set true/false whether or not to retry connect upon failure or number of times to retry.
      *
-     * @param boolean|integer $retryQuery
+     * @param boolean|integer $retryQuery True/false or number of times to retry queries.
      */
     public function setRetryQuery($retryQuery)
     {

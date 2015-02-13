@@ -26,8 +26,10 @@ namespace Doctrine\MongoDB\Util;
  * by getReadPreference() are not consistent with those expected by
  * setReadPreference(). See: https://jira.mongodb.org/browse/PHP-638.
  *
- * @since  1.0
- * @author Jeremy Mikola <jmikola@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.org
+ * @since       1.0
+ * @author      Jeremy Mikola <jmikola@gmail.com>
  */
 final class ReadPreference
 {
@@ -65,34 +67,6 @@ final class ReadPreference
         }
 
         return self::$types[$type];
-    }
-
-    /**
-     * Converts return values from getReadPreference() methods to the format
-     * accepted by setReadPreference() methods.
-     *
-     * This is necessary for MongoClient, MongoDB, and MongoCollection classes
-     * in driver versions between 1.3.0 and 1.3.3.
-     *
-     * @since 1.1
-     * @param array $readPref
-     * @return array
-     */
-    public static function convertReadPreference(array $readPref)
-    {
-        if (is_numeric($readPref['type'])) {
-            $readPref['type'] = self::convertNumericType($readPref['type']);
-        }
-
-        if (isset($readPref['type_string'])) {
-            unset($readPref['type_string']);
-        }
-
-        if ( ! empty($readPref['tagsets'])) {
-            $readPref['tagsets'] = self::convertTagSets($readPref['tagsets']);
-        }
-
-        return $readPref;
     }
 
     /**

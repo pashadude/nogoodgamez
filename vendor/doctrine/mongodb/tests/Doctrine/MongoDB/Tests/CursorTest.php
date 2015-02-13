@@ -58,15 +58,6 @@ class CursorTest extends BaseTest
     /**
      * @covers Doctrine\MongoDB\Cursor::getSingleResult
      */
-    public function testCursorIsResetBeforeGetSingleResult()
-    {
-        $this->assertEquals($this->doc1, $this->cursor->getNext());
-        $this->assertEquals($this->doc1, $this->cursor->getSingleResult());
-    }
-
-    /**
-     * @covers Doctrine\MongoDB\Cursor::getSingleResult
-     */
     public function testGetSingleResultReturnsNull()
     {
         $collection = $this->conn->selectCollection(self::$dbName, 'tmp');
@@ -120,7 +111,7 @@ class CursorTest extends BaseTest
             ->method('slaveOkay')
             ->with(false);
 
-        $cursor = $this->getTestCursor($this->getMockCollection(), $mongoCursor);
+        $cursor = $this->getTestCursor($this->getMockConnection(), $this->getMockCollection(), $mongoCursor);
 
         $cursor->slaveOkay(true);
         $cursor->slaveOkay(false);
@@ -144,7 +135,7 @@ class CursorTest extends BaseTest
         $mongoCursor->expects($this->never())
             ->method('setReadPreference');
 
-        $cursor = $this->getTestCursor($this->getMockCollection(), $mongoCursor);
+        $cursor = $this->getTestCursor($this->getMockConnection(), $this->getMockCollection(), $mongoCursor);
 
         $cursor->slaveOkay(true);
         $cursor->slaveOkay(false);
@@ -174,7 +165,7 @@ class CursorTest extends BaseTest
             ->method('setReadPreference')
             ->with(\MongoClient::RP_PRIMARY);
 
-        $cursor = $this->getTestCursor($this->getMockCollection(), $mongoCursor);
+        $cursor = $this->getTestCursor($this->getMockConnection(), $this->getMockCollection(), $mongoCursor);
 
         $cursor->slaveOkay(true);
         $cursor->slaveOkay(false);
@@ -200,163 +191,9 @@ class CursorTest extends BaseTest
             ->with(\MongoClient::RP_SECONDARY_PREFERRED, array(array('dc' => 'east')))
             ->will($this->returnValue(false));
 
-        $cursor = $this->getTestCursor($this->getMockCollection(), $mongoCursor);
+        $cursor = $this->getTestCursor($this->getMockConnection(), $this->getMockCollection(), $mongoCursor);
 
         $cursor->slaveOkay(true);
-    }
-
-    public function testSetReadPreference()
-    {
-        if (!method_exists('MongoCursor', 'setReadPreference')) {
-            $this->markTestSkipped('This test is not applicable to drivers without MongoCursor::setReadPreference()');
-        }
-
-        $mongoCursor = $this->getMockMongoCursor();
-
-        $mongoCursor->expects($this->at(0))
-            ->method('setReadPreference')
-            ->with(\MongoClient::RP_PRIMARY)
-            ->will($this->returnValue(true));
-
-        $mongoCursor->expects($this->at(1))
-            ->method('setReadPreference')
-            ->with(\MongoClient::RP_SECONDARY_PREFERRED, array(array('dc' => 'east')))
-            ->will($this->returnValue(true));
-
-        $cursor = $this->getTestCursor($this->getMockCollection(), $mongoCursor);
-
-        $this->assertSame($cursor, $cursor->setReadPreference(\MongoClient::RP_PRIMARY));
-        $this->assertSame($cursor, $cursor->setReadPreference(\MongoClient::RP_SECONDARY_PREFERRED, array(array('dc' => 'east'))));
-    }
-
-    /**
-     * @dataProvider provideSortOrderValues
-     */
-    public function testSortOrderConversion($actual, $expected)
-    {
-        $mongoCursor = $this->getMockMongoCursor();
-
-        $mongoCursor->expects($this->once())
-            ->method('sort')
-            ->with(array('x' => $expected));
-
-        $cursor = $this->getTestCursor($this->getMockCollection(), $mongoCursor);
-
-        $cursor->sort(array('x' => $actual));
-    }
-
-    public function provideSortOrderValues()
-    {
-        return array(
-            // Strings should be compared to "asc"
-            array('asc', 1),
-            array('ASC', 1),
-            array('desc', -1),
-            array('DESC', -1),
-            array('not-asc', -1),
-            // Scalar values should be cast to integers (even though boolean false doesn't make sense)
-            array(1.0, 1),
-            array(-1.0, -1),
-            array(true, 1),
-            array(false, 0),
-            // Non-scalar values should be left as-is
-            array(array('$meta' => 'textScore'), array('$meta' => 'textScore')),
-        );
-    }
-
-    public function testRecreate()
-    {
-        if (!method_exists('MongoCursor', 'setReadPreference')) {
-            $this->markTestSkipped('This test requires MongoCursor::setReadPreference()');
-        }
-
-        $self = $this;
-
-        $setCursorExpectations = function($mongoCursor) use ($self) {
-            $mongoCursor->expects($self->once())
-                ->method('hint')
-                ->with(array('x' => 1));
-            $mongoCursor->expects($self->once())
-                ->method('immortal')
-                ->with(false);
-            $mongoCursor->expects($self->at(2))
-                ->method('addOption')
-                ->with('$min', array('x' => 9000));
-            $mongoCursor->expects($self->at(3))
-                ->method('addOption')
-                ->with('$max', array('x' => 9999));
-            $mongoCursor->expects($self->once())
-                ->method('batchSize')
-                ->with(10);
-            $mongoCursor->expects($self->once())
-                ->method('limit')
-                ->with(20);
-            $mongoCursor->expects($self->once())
-                ->method('skip')
-                ->with(0);
-            $mongoCursor->expects($self->at(7))
-                ->method('setReadPreference')
-                ->with(\MongoClient::RP_PRIMARY)
-                ->will($self->returnValue(true));
-            $mongoCursor->expects($self->at(8))
-                ->method('setReadPreference')
-                ->with(\MongoClient::RP_NEAREST, array(array('dc' => 'east')))
-                ->will($self->returnValue(true));
-            $mongoCursor->expects($self->once())
-                ->method('snapshot');
-            $mongoCursor->expects($self->once())
-                ->method('sort')
-                ->with(array('x' => -1));
-            $mongoCursor->expects($self->once())
-                ->method('tailable')
-                ->with(false);
-            $mongoCursor->expects($self->once())
-                ->method('timeout')
-                ->with(1000);
-        };
-
-        $mongoCursor = $this->getMockMongoCursor();
-        $recreatedMongoCursor = $this->getMockMongoCursor();
-
-        $setCursorExpectations($mongoCursor);
-        $setCursorExpectations($recreatedMongoCursor);
-
-        $mongoCollection = $this->getMockCollection();
-        $mongoCollection->expects($this->once())
-            ->method('find')
-            ->with(array('x' => 9500), array())
-            ->will($this->returnValue($recreatedMongoCursor));
-
-        $collection = $this->getMockCollection();
-        $collection->expects($this->once())
-            ->method('getMongoCollection')
-            ->will($this->returnValue($mongoCollection));
-
-        $cursor = $this->getTestCursor($collection, $mongoCursor, array('x' => 9500));
-
-        $cursor
-            ->hint(array('x' => 1))
-            ->immortal(false)
-            ->addOption('$min', array('x' => 9000))
-            ->addOption('$max', array('x' => 9999))
-            ->batchSize(10)
-            ->limit(20)
-            ->skip(0)
-            ->slaveOkay(false)
-            ->setReadPreference(\MongoClient::RP_NEAREST, array(array('dc' => 'east')))
-            ->snapshot()
-            ->sort(array('x' => -1))
-            ->tailable(false)
-            ->timeout(1000);
-
-        $cursor->recreate();
-    }
-
-    private function getMockCollection()
-    {
-        return $this->getMockBuilder('Doctrine\MongoDB\Collection')
-            ->disableOriginalConstructor()
-            ->getMock();
     }
 
     private function getMockMongoCursor()
@@ -366,8 +203,22 @@ class CursorTest extends BaseTest
             ->getMock();
     }
 
-    private function getTestCursor(Collection $collection, \MongoCursor $mongoCursor, $query = array())
+    private function getMockCollection()
     {
-        return new Cursor($collection, $mongoCursor, $query);
+        return $this->getMockBuilder('Doctrine\MongoDB\Collection')
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    private function getMockConnection()
+    {
+        return $this->getMockBuilder('Doctrine\MongoDB\Connection')
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    private function getTestCursor(Connection $connection, Collection $collection, \MongoCursor $mongoCursor)
+    {
+        return new Cursor($connection, $collection, $mongoCursor);
     }
 }

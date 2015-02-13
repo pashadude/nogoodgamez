@@ -29,11 +29,4 @@ abstract class BaseTest extends PHPUnit_Framework_TestCase
         $this->conn->close();
         unset($this->conn);
     }
-
-    protected function getServerVersion()
-    {
-        $result = $this->conn->selectDatabase(self::$dbName)->command(array('buildInfo' => 1));
-
-        return $result['version'];
-    }
 }

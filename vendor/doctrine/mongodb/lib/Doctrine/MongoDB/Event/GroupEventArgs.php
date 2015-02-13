@@ -22,40 +22,26 @@ namespace Doctrine\MongoDB\Event;
 use Doctrine\Common\EventArgs as BaseEventArgs;
 
 /**
- * Event args for the group command.
+ * Group event args.
  *
- * @since  1.0
- * @author Jonathan H. Wage <jonwage@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.com
+ * @since       1.0
+ * @author      Jonathan H. Wage <jonwage@gmail.com>
  */
 class GroupEventArgs extends BaseEventArgs
 {
     private $invoker;
     private $keys;
-    private $initial;
+    private $initial = array();
     private $reduce;
-    private $options;
 
-    /**
-     * Constructor.
-     *
-     * @param object                  $invoker
-     * @param array|string|\MongoCode $keys
-     * @param array                   $initial
-     * @param string|\MongoCode       $reduce
-     * @param array                   $options
-     */
-    public function __construct($invoker, $keys, array $initial, $reduce, array $options = array())
+    public function __construct($invoker, &$keys, array &$initial, &$reduce)
     {
         $this->invoker = $invoker;
         $this->keys = $keys;
         $this->initial = $initial;
         $this->reduce = $reduce;
-        $this->options = $options;
-    }
-
-    public function getInvoker()
-    {
-        return $this->invoker;
     }
 
     public function getKeys()
@@ -71,10 +57,5 @@ class GroupEventArgs extends BaseEventArgs
     public function getReduce()
     {
         return $this->reduce;
-    }
-
-    public function getOptions()
-    {
-        return $this->options;
     }
 }

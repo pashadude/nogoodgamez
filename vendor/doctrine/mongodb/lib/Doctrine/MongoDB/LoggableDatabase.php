@@ -22,44 +22,46 @@ namespace Doctrine\MongoDB;
 use Doctrine\Common\EventManager;
 
 /**
- * Wrapper for the MongoDB class with logging functionality.
+ * Wrapper for the PHP MongoDB class.
  *
- * @since  1.0
- * @author Jonathan H. Wage <jonwage@gmail.com>
- * @author Bulat Shakirzyanov <mallluhuct@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.org
+ * @since       1.0
+ * @author      Jonathan H. Wage <jonwage@gmail.com>
+ * @author      Bulat Shakirzyanov <mallluhuct@gmail.com>
  */
 class LoggableDatabase extends Database implements Loggable
 {
     /**
-     * The logger callable.
+     * A callable for logging statements.
      *
-     * @var callable
+     * @var mixed
      */
     protected $loggerCallable;
 
     /**
-     * Constructor.
+     * Create a new MongoDB instance which wraps a PHP MongoDB instance.
      *
-     * @param Connection   $connection     Connection used to create Collections
-     * @param \MongoDB     $mongoDB        MongoDB instance being wrapped
-     * @param EventManager $evm            EventManager instance
-     * @param integer      $numRetries     Number of times to retry queries
-     * @param callable     $loggerCallable The logger callable
+     * @param Connection $connection The Doctrine Connection instance.
+     * @param string $name The name of the database.
+     * @param EventManager $evm  The EventManager instance.
+     * @param string $cmd  The MongoDB cmd character.
+     * @param mixed $numRetries Number of times to retry queries.
+     * @param Closure $loggerCallable  Logger callback function.
      */
-    public function __construct(Connection $connection, \MongoDB $mongoDB, EventManager $evm, $numRetries, $loggerCallable)
+    public function __construct(Connection $connection, $name, EventManager $evm, $cmd, $numRetries, $loggerCallable)
     {
         if ( ! is_callable($loggerCallable)) {
             throw new \InvalidArgumentException('$loggerCallable must be a valid callback');
         }
-        parent::__construct($connection, $mongoDB, $evm, $numRetries);
+        parent::__construct($connection, $name, $evm, $cmd, $numRetries);
         $this->loggerCallable = $loggerCallable;
     }
 
     /**
      * Log something using the configured logger callable.
      *
-     * @see Loggable::log()
-     * @param array $log
+     * @param array $log The array of data to log.
      */
     public function log(array $log)
     {
@@ -67,108 +69,91 @@ class LoggableDatabase extends Database implements Loggable
         call_user_func_array($this->loggerCallable, array($log));
     }
 
-    /**
-     * @see Database::authenticate()
-     */
     public function authenticate($username, $password)
     {
         $this->log(array(
             'authenticate' => true,
             'username' => $username,
-            'password' => $password,
+            'password' => $password
         ));
 
         return parent::authenticate($username, $password);
     }
 
-    /**
-     * @see Database::command()
-     */
-    public function command(array $data, array $options = array(), &$hash = null)
+    public function command(array $data, array $options = array())
     {
         $this->log(array(
             'command' => true,
             'data' => $data,
-            'options' => $options,
+            'options' => $options
         ));
-
-        if (func_num_args() > 2) {
-            return parent::command($data, $options, $hash);
-        }
 
         return parent::command($data, $options);
     }
 
-    /**
-     * @see Database::createCollection()
-     */
-    public function createCollection($name, $cappedOrOptions = false, $size = 0, $max = 0)
+    public function createCollection($name, $capped = false, $size = 0, $max = 0)
     {
-        $options = is_array($cappedOrOptions)
-            ? array_merge(array('capped' => false, 'size' => 0, 'max' => 0), $cappedOrOptions)
-            : array('capped' => $cappedOrOptions, 'size' => $size, 'max' => $max);
-
         $this->log(array(
             'createCollection' => true,
-            'name' => $name,
-            'options' => $options,
-            /* @deprecated 1.1 Replaced by options; will be removed for 2.0 */
-            'capped' => $options['capped'],
-            'size' => $options['size'],
-            'max' => $options['max'],
+            'capped' => $capped,
+            'size' => $size,
+            'max' => $max
         ));
 
-        return parent::createCollection($name, $options);
+        return parent::createCollection($name, $capped, $size, $max);
     }
 
-    /**
-     * @see Database::drop()
-     */
+    public function createDBRef($collection, $a)
+    {
+        $this->log(array(
+            'createDBRef' => true,
+            'collection' => $collection,
+            'reference' => $a
+        ));
+
+        return parent::createDBRef($collection, $a);
+    }
+
     public function drop()
     {
-        $this->log(array('dropDatabase' => true));
+        $this->log(array(
+            'dropDatabase' => true
+        ));
 
         return parent::drop();
     }
 
-    /**
-     * @see Database::execute()
-     */
     public function execute($code, array $args = array())
     {
         $this->log(array(
             'execute' => true,
             'code' => $code,
-            'args' => $args,
+            'args' => $args
         ));
 
         return parent::execute($code, $args);
     }
 
-    /**
-     * @see Database::getDBRef()
-     */
     public function getDBRef(array $ref)
     {
         $this->log(array(
             'getDBRef' => true,
-            'reference' => $ref,
+            'reference' => $ref
         ));
 
         return parent::getDBRef($ref);
     }
 
     /**
-     * Return a new LoggableCollection instance.
+     * Method which creates a Doctrine\MongoDB\Collection instance.
      *
-     * @see Database::doSelectCollection()
      * @param string $name
-     * @return LoggableCollection
+     * @return Collection $coll
      */
     protected function doSelectCollection($name)
     {
-        $mongoCollection = $this->mongoDB->selectCollection($name);
-
-        return new LoggableCollection($this, $mongoCollection, $this->eventManager, $this->numRetries, $this->loggerCallable);
+        return new LoggableCollection(
+            $this->connection, $name, $this, $this->eventManager, $this->cmd, $this->loggerCallable, $this->numRetries
+        );
     }
 }

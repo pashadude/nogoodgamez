@@ -22,10 +22,12 @@ namespace Doctrine\MongoDB\Event;
 use Doctrine\Common\EventArgs as BaseEventArgs;
 
 /**
- * Event args for the mapReduce command.
+ * Map reduce event args.
  *
- * @since  1.0
- * @author Jonathan H. Wage <jonwage@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.com
+ * @since       1.0
+ * @author      Jonathan H. Wage <jonwage@gmail.com>
  */
 class MapReduceEventArgs extends BaseEventArgs
 {
@@ -34,36 +36,19 @@ class MapReduceEventArgs extends BaseEventArgs
     private $reduce;
     private $query;
     private $out;
-    private $options;
 
-    /**
-     * Constructor.
-     *
-     * @param object            $invoker
-     * @param string|\MongoCode $map
-     * @param string|\MongoCode $reduce
-     * @param array             $out
-     * @param array             $query
-     * @param array             $options
-     */
-    public function __construct($invoker, $map, $reduce, array $out, array $query, array $options = array())
+    public function __construct($invoker, &$map, &$reduce, array &$out, array &$query)
     {
         $this->invoker = $invoker;
         $this->map = $map;
         $this->reduce = $reduce;
         $this->out = $out;
         $this->query = $query;
-        $this->options = $options;
     }
 
-    public function getInvoker()
+    public function getKeys()
     {
-        return $this->invoker;
-    }
-
-    public function getMap()
-    {
-        return $this->map;
+        return $this->keys;
     }
 
     public function getReduce()
@@ -71,18 +56,13 @@ class MapReduceEventArgs extends BaseEventArgs
         return $this->reduce;
     }
 
-    public function getOut()
-    {
-        return $this->out;
-    }
-
     public function getQuery()
     {
         return $this->query;
     }
 
-    public function getOptions()
+    public function getOut()
     {
-        return $this->options;
+        return $this->out;
     }
 }

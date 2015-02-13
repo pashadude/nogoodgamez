@@ -20,43 +20,55 @@
 namespace Doctrine\MongoDB;
 
 /**
- * Wrapper for the MongoCursor class with logging functionality.
+ * Wrapper for the PHP MongoCursor class.
  *
- * @since  1.0
- * @author Jonathan H. Wage <jonwage@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.org
+ * @since       1.0
+ * @author      Jonathan H. Wage <jonwage@gmail.com>
  */
 class LoggableCursor extends Cursor implements Loggable
 {
     /**
-     * The logger callable.
+     * A callable for logging statements.
      *
      * @var callable
      */
     protected $loggerCallable;
 
     /**
-     * Constructor.
+     * Create a new LoggableCursor, which wraps around a given PHP MongoCursor.
      *
-     * @param Collection   $collection     Collection used to create this Cursor
-     * @param \MongoCursor $mongoCursor    MongoCursor being wrapped
-     * @param array        $query          Query criteria
-     * @param array        $fields         Selected fields (projection)
-     * @param integer      $numRetries     Number of times to retry queries
-     * @param callable     $loggerCallable Logger callable
+     * @param Connection  $connection     Connection used to create this cursor
+     * @param Collection  $collection     Collection used to create this cursor
+     * @param MongoCursor $mongoCursor    Cursor being wrapped
+     * @param callable    $loggerCallable Logger callable
+     * @param array       $query          Query criteria
+     * @param array       $fields         Selected fields (projection)
+     * @param integer     $numRetries     Number of times to retry queries
      */
-    public function __construct(Collection $collection, \MongoCursor $mongoCursor, array $query, array $fields, $numRetries, $loggerCallable)
+    public function __construct(Connection $connection, Collection $collection, \MongoCursor $mongoCursor, $loggerCallable, array $query, array $fields, $numRetries = 0)
     {
         if ( ! is_callable($loggerCallable)) {
             throw new \InvalidArgumentException('$loggerCallable must be a valid callback');
         }
+        parent::__construct($connection, $collection, $mongoCursor, $query, $fields, $numRetries);
         $this->loggerCallable = $loggerCallable;
-        parent::__construct($collection, $mongoCursor, $query, $fields, $numRetries);
+    }
+
+    /**
+     * Gets the logger callable.
+     *
+     * @return mixed The logger callable
+     */
+    public function getLoggerCallable()
+    {
+        return $this->loggerCallable;
     }
 
     /**
      * Log something using the configured logger callable.
      *
-     * @see Loggable::log()
      * @param array $data
      */
     public function log(array $data)
@@ -67,39 +79,16 @@ class LoggableCursor extends Cursor implements Loggable
     }
 
     /**
-     * Get the logger callable.
-     *
-     * @return callable
+     * @see Cursor::sort()
      */
-    public function getLoggerCallable()
-    {
-        return $this->loggerCallable;
-    }
-
-    /**
-     * @see Cursor::hint()
-     */
-    public function hint($keyPattern)
+    public function sort($fields)
     {
         $this->log(array(
-            'hint' => true,
-            'keyPattern' => $keyPattern,
+            'sort' => true,
+            'sortFields' => $fields
         ));
 
-        return parent::hint($keyPattern);
-    }
-
-    /**
-     * @see Cursor::limit()
-     */
-    public function limit($num)
-    {
-        $this->log(array(
-            'limit' => true,
-            'limitNum' => $num,
-        ));
-
-        return parent::limit($num);
+        return parent::sort($fields);
     }
 
     /**
@@ -116,6 +105,32 @@ class LoggableCursor extends Cursor implements Loggable
     }
 
     /**
+     * @see Cursor::limit()
+     */
+    public function limit($num)
+    {
+        $this->log(array(
+            'limit' => true,
+            'limitNum' => $num,
+        ));
+
+        return parent::limit($num);
+    }
+
+    /**
+     * @see Cursor::hint()
+     */
+    public function hint(array $keyPattern)
+    {
+        $this->log(array(
+            'hint' => true,
+            'keyPattern' => $keyPattern,
+        ));
+
+        return parent::hint($keyPattern);
+    }
+
+    /**
      * @see Cursor::snapshot()
      */
     public function snapshot()
@@ -125,18 +140,5 @@ class LoggableCursor extends Cursor implements Loggable
         ));
 
         return parent::snapshot();
-    }
-
-    /**
-     * @see Cursor::sort()
-     */
-    public function sort($fields)
-    {
-        $this->log(array(
-            'sort' => true,
-            'sortFields' => $fields,
-        ));
-
-        return parent::sort($fields);
     }
 }

@@ -22,29 +22,22 @@ namespace Doctrine\MongoDB\Event;
 use Doctrine\Common\EventArgs as BaseEventArgs;
 
 /**
- * Event args for generic queries.
+ * Event args.
  *
- * @since  1.0
- * @author Jonathan H. Wage <jonwage@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.com
+ * @since       1.0
+ * @author      Jonathan H. Wage <jonwage@gmail.com>
  */
 class EventArgs extends BaseEventArgs
 {
     private $invoker;
     private $data;
-    private $options;
 
-    /**
-     * Constructor.
-     *
-     * @param object $invoker
-     * @param mixed  $data
-     * @param array  $options
-     */
-    public function __construct($invoker, $data = null, array $options = array())
+    public function __construct($invoker, &$data = null)
     {
         $this->invoker = $invoker;
         $this->data = $data;
-        $this->options = $options;
     }
 
     public function getInvoker()
@@ -55,10 +48,5 @@ class EventArgs extends BaseEventArgs
     public function getData()
     {
         return $this->data;
-    }
-
-    public function getOptions()
-    {
-        return $this->options;
     }
 }

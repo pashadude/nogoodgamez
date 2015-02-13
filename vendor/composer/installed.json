@@ -132,31 +132,27 @@
         ]
     },
     {
-        "name": "doctrine/instantiator",
-        "version": "1.0.4",
-        "version_normalized": "1.0.4.0",
+        "name": "doctrine/inflector",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/doctrine/instantiator.git",
-            "reference": "f976e5de371104877ebc89bd8fecb0019ed9c119"
+            "url": "https://github.com/doctrine/inflector.git",
+            "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/instantiator/zipball/f976e5de371104877ebc89bd8fecb0019ed9c119",
-            "reference": "f976e5de371104877ebc89bd8fecb0019ed9c119",
+            "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
+            "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3,<8.0-DEV"
+            "php": ">=5.3.2"
         },
         "require-dev": {
-            "athletic/athletic": "~0.1.8",
-            "ext-pdo": "*",
-            "ext-phar": "*",
-            "phpunit/phpunit": "~4.0",
-            "squizlabs/php_codesniffer": "2.0.*@ALPHA"
+            "phpunit/phpunit": "4.*"
         },
-        "time": "2014-10-13 12:58:55",
+        "time": "2014-12-20 21:24:13",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -166,7 +162,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-                "Doctrine\\Instantiator\\": "src"
+                "Doctrine\\Common\\Inflector\\": "lib/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -175,16 +171,33 @@
         ],
         "authors": [
             {
-                "name": "Marco Pivetta",
-                "email": "ocramius@gmail.com",
-                "homepage": "http://ocramius.github.com/"
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+            },
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com"
             }
         ],
-        "description": "A small, lightweight utility to instantiate objects in PHP without invoking their constructors",
-        "homepage": "https://github.com/doctrine/instantiator",
+        "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+        "homepage": "http://www.doctrine-project.org",
         "keywords": [
-            "constructor",
-            "instantiate"
+            "inflection",
+            "pluralize",
+            "singularize",
+            "string"
         ]
     },
     {
@@ -456,75 +469,6 @@
         ]
     },
     {
-        "name": "doctrine/inflector",
-        "version": "v1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/doctrine/inflector.git",
-            "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
-            "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "4.*"
-        },
-        "time": "2014-12-20 21:24:13",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\Common\\Inflector\\": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org"
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de"
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com"
-            },
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com"
-            },
-            {
-                "name": "Johannes Schmitt",
-                "email": "schmittjoh@gmail.com"
-            }
-        ],
-        "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-        "homepage": "http://www.doctrine-project.org",
-        "keywords": [
-            "inflection",
-            "pluralize",
-            "singularize",
-            "string"
-        ]
-    },
-    {
         "name": "doctrine/common",
         "version": "v2.4.2",
         "version_normalized": "2.4.2.0",
@@ -606,17 +550,17 @@
     },
     {
         "name": "doctrine/mongodb",
-        "version": "1.1.7",
-        "version_normalized": "1.1.7.0",
+        "version": "1.0.10",
+        "version_normalized": "1.0.10.0",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/mongodb.git",
-            "reference": "3b97082b1526406a3e8ddc294713b89d6f460f59"
+            "reference": "0e55013feace05df45ed5856c7da51703dfea352"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/mongodb/zipball/3b97082b1526406a3e8ddc294713b89d6f460f59",
-            "reference": "3b97082b1526406a3e8ddc294713b89d6f460f59",
+            "url": "https://api.github.com/repos/doctrine/mongodb/zipball/0e55013feace05df45ed5856c7da51703dfea352",
+            "reference": "0e55013feace05df45ed5856c7da51703dfea352",
             "shasum": ""
         },
         "require": {
@@ -624,19 +568,8 @@
             "ext-mongo": ">=1.2.12,<1.7-dev",
             "php": ">=5.3.2"
         },
-        "require-dev": {
-            "jmikola/geojson": "~1.0"
-        },
-        "suggest": {
-            "jmikola/geojson": "Support GeoJSON geometry objects in 2dsphere queries"
-        },
-        "time": "2015-01-30 15:43:45",
+        "time": "2015-01-30 15:37:03",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2.x-dev"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
@@ -670,82 +603,6 @@
         "keywords": [
             "database",
             "mongodb",
-            "persistence"
-        ]
-    },
-    {
-        "name": "doctrine/mongodb-odm",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/doctrine/mongodb-odm.git",
-            "reference": "1343375a4edf3e2157138e442441654e25fabbec"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/doctrine/mongodb-odm/zipball/1343375a4edf3e2157138e442441654e25fabbec",
-            "reference": "1343375a4edf3e2157138e442441654e25fabbec",
-            "shasum": ""
-        },
-        "require": {
-            "doctrine/annotations": "~1.0",
-            "doctrine/cache": "~1.0",
-            "doctrine/collections": "~1.1",
-            "doctrine/common": "2.4.*",
-            "doctrine/inflector": "~1.0",
-            "doctrine/instantiator": "~1.0.1",
-            "doctrine/mongodb": ">=1.1.5,<2.0",
-            "php": ">=5.3.2",
-            "symfony/console": "~2.0"
-        },
-        "require-dev": {
-            "symfony/yaml": "~2.0"
-        },
-        "suggest": {
-            "symfony/yaml": "Enables the YAML metadata mapping driver"
-        },
-        "time": "2015-01-23 10:29:57",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\ODM\\MongoDB": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jonathan H. Wage",
-                "email": "jonwage@gmail.com"
-            },
-            {
-                "name": "Jeremy Mikola",
-                "email": "jmikola@gmail.com"
-            },
-            {
-                "name": "Bulat Shakirzyanov",
-                "email": "mallluhuct@gmail.com"
-            },
-            {
-                "name": "Kris Wallsmith",
-                "email": "kris.wallsmith@gmail.com"
-            }
-        ],
-        "description": "Doctrine MongoDB Object Document Mapper",
-        "homepage": "http://www.doctrine-project.org",
-        "keywords": [
-            "database",
-            "mongodb",
-            "odm",
             "persistence"
         ]
     },
@@ -807,5 +664,79 @@
         ],
         "description": "Symfony Console Component",
         "homepage": "http://symfony.com"
+    },
+    {
+        "name": "doctrine/mongodb-odm",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/superdweebie/mongodb-odm.git",
+            "reference": "5b3efb10f789b46367b703cac1069d7cff0f218e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/superdweebie/mongodb-odm/zipball/5b3efb10f789b46367b703cac1069d7cff0f218e",
+            "reference": "5b3efb10f789b46367b703cac1069d7cff0f218e",
+            "shasum": ""
+        },
+        "require": {
+            "doctrine/common": ">=2.2.0,<2.5-dev",
+            "doctrine/inflector": "~1.0",
+            "doctrine/mongodb": "1.0.*",
+            "php": ">=5.3.2",
+            "symfony/console": "~2.0"
+        },
+        "require-dev": {
+            "symfony/yaml": "~2.0"
+        },
+        "suggest": {
+            "symfony/yaml": "Enables the YAML metadata mapping driver"
+        },
+        "time": "2013-12-13 00:37:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\ODM\\MongoDB": "lib/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Bulat Shakirzyanov",
+                "email": "mallluhuct@gmail.com"
+            },
+            {
+                "name": "Kris Wallsmith",
+                "email": "kris.wallsmith@gmail.com"
+            },
+            {
+                "name": "Jonathan H. Wage",
+                "email": "jonwage@gmail.com"
+            },
+            {
+                "name": "Jeremy Mikola",
+                "email": "jmikola@gmail.com"
+            }
+        ],
+        "description": "Doctrine MongoDB Object Document Mapper",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database",
+            "mongodb",
+            "odm",
+            "persistence"
+        ],
+        "support": {
+            "source": "https://github.com/superdweebie/mongodb-odm/tree/master"
+        }
     }
 ]

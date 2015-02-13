@@ -1,5 +1,7 @@
 <?php
 /*
+ *  $Id$
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
  * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -20,40 +22,39 @@
 namespace Doctrine\MongoDB;
 
 /**
- * Container class for all Doctrine MongoDB events.
+ * Container for all Doctrine\MongoDB events.
  *
  * This class cannot be instantiated.
  *
- * @since  1.0
- * @author Jonathan H. Wage <jonwage@gmail.com>
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ * @link        www.doctrine-project.com
+ * @since       1.0
+ * @author      Jonathan H. Wage <jonwage@gmail.com>
  */
 final class Events
 {
     private function __construct() {}
 
-    const preAggregate = 'collectionPreAggregate';
-    const postAggregate = 'collectionPostAggregate';
-
     const preBatchInsert = 'collectionPreBatchInsert';
     const postBatchInsert = 'collectionPostBatchInsert';
 
-    const preCreateCollection = 'preCreateCollection';
-    const postCreateCollection = 'postCreateCollection';
+    const preSave = 'collectionPreSave';
+    const postSave = 'collectionPostSave';
 
-    const preConnect = 'preConnect';
-    const postConnect = 'postConnect';
+    const preInsert = 'collectionPreInsert';
+    const postInsert = 'collectionPostInsert';
 
-    const preDistinct = 'collectionPreDistinct';
-    const postDistinct = 'collectionPostDistinct';
+    const preUpdate = 'collectionPreUpdate';
+    const postUpdate = 'collectionPostUpdate';
 
-    const preDropCollection = 'preDropCollection';
-    const postDropCollection = 'postDropCollection';
-
-    const preDropDatabase = 'preDropDatabase';
-    const postDropDatabase = 'postDropDatabase';
+    const preRemove = 'collectionPreRemove';
+    const postRemove = 'collectionPostRemove';
 
     const preFind = 'collectionPreFind';
     const postFind = 'collectionPostFind';
+
+    const preFindOne = 'collectionPreFindOne';
+    const postFindOne = 'collectionPostFindOne';
 
     const preFindAndRemove = 'collectionPreFindAndRemove';
     const postFindAndRemove = 'collectionPostFindAndRemove';
@@ -61,20 +62,17 @@ final class Events
     const preFindAndUpdate = 'collectionPreFindAndUpdate';
     const postFindAndUpdate = 'collectionPostFindAndUpdate';
 
-    const preFindOne = 'collectionPreFindOne';
-    const postFindOne = 'collectionPostFindOne';
+    const preGroup = 'collectionPreGroup';
+    const postGroup = 'collectionPostGroup';
 
     const preGetDBRef = 'collectionPreGetDBRef';
     const postGetDBRef = 'collectionPostGetDBRef';
 
-    const preGetGridFS = 'preGetGridFS';
-    const postGetGridFS = 'postGetGridFS';
+    const preCreateDBRef = 'collectionPreCreateDBRef';
+    const postCreateDBRef = 'collectionPostCreateDBRef';
 
-    const preGroup = 'collectionPreGroup';
-    const postGroup = 'collectionPostGroup';
-
-    const preInsert = 'collectionPreInsert';
-    const postInsert = 'collectionPostInsert';
+    const preDistinct = 'collectionPreDistinct';
+    const postDistinct = 'collectionPostDistinct';
 
     const preMapReduce = 'preMapReduce';
     const postMapReduce = 'postMapReduce';
@@ -82,18 +80,24 @@ final class Events
     const preNear = 'collectionPreNear';
     const postNear = 'collectionPostNear';
 
-    const preRemove = 'collectionPreRemove';
-    const postRemove = 'collectionPostRemove';
-
-    const preSave = 'collectionPreSave';
-    const postSave = 'collectionPostSave';
-
-    const preSelectCollection = 'preSelectCollection';
-    const postSelectCollection = 'postSelectCollection';
+    const preCreateCollection = 'preCreateCollection';
+    const postCreateCollection = 'postCreateCollection';
 
     const preSelectDatabase = 'preSelectDatabase';
     const postSelectDatabase = 'postSelectDatabase';
 
-    const preUpdate = 'collectionPreUpdate';
-    const postUpdate = 'collectionPostUpdate';
+    const preDropDatabase = 'preDropDatabase';
+    const postDropDatabase = 'postDropDatabase';
+
+    const preSelectCollection = 'preSelectCollection';
+    const postSelectCollection = 'postSelectCollection';
+
+    const preDropCollection = 'preDropCollection';
+    const postDropCollection = 'postDropCollection';
+
+    const preGetGridFS = 'preGetGridFS';
+    const postGetGridFS = 'postGetGridFS';
+
+    const preConnect = 'preConnect';
+    const postConnect = 'postConnect';
 }

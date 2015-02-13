@@ -16,18 +16,7 @@
         "ext-mongo": ">=1.2.12,<1.7-dev",
         "doctrine/common": ">=2.1.0,<2.5-dev"
     },
-    "require-dev": {
-        "jmikola/geojson": "~1.0"
-    },
-    "suggest": {
-        "jmikola/geojson": "Support GeoJSON geometry objects in 2dsphere queries"
-    },
     "autoload": {
         "psr-0": { "Doctrine\\MongoDB": "lib/" }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.2.x-dev"
-        }
     }
 }
