@@ -1,16 +1,17 @@
 <?php
 namespace Documents;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
-/** @Document(collection="users") */
+/** @ODM\Document(collection="users") */
 class User
 {
-	/** @Id */
+	/** @ODM\Id */
     private $id;
 
-    /** @Boolean */
+    /** @ODM\Boolean */
     private $real;
 
-    /** @String*/
+    /** @ODM\String*/
     private $session;
 
     

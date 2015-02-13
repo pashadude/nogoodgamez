@@ -1,15 +1,23 @@
 {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/superdweebie/mongodb-odm"
+        }
+    ],
+
     "require": {
         "nategood/httpful": "*",
         "electrolinux/phpquery": "dev-master",
         "parsecsv/php-parsecsv": "0.4.5",
+        "doctrine/mongodb": "1.0.1",
         "doctrine/mongodb-odm": "1.0.*@dev"
     },
 
     "autoload": {
     	"psr-4":{
-    		"Nogoodgamez\\Fetcher\\": "fetcher/",
-            "Nogoodgamez\\app\\model\\": "app/models"
+    		"Fetcher\\": "fetcher/",
+            "Documents\\": "app/model/"
         },
         
         "files": ["fetcher/helpers.php"]

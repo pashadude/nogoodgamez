@@ -1,19 +1,23 @@
 <?php
 namespace Documents;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
-/** @Document(collection="games") */
+/**
+ * @ODM\Document
+ */
+
 class Game
 {	
-	/** @Id */
+	/** @ODM\Id */
     private $id;
  
-    /** @String */
+    /** @ODM\String */
     private $pic;
 
-    /** @String */
+    /** @ODM\String */
     private $name;
 
-    /** @Collection*/
+    /** @ODM\Collection*/
     private $genres = array();
 
     public function addGenre($genre)

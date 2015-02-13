@@ -1,22 +1,22 @@
 <?php
 namespace Documents;
-
-/** @Document(collection="assessments") @HasLifecycleCallbacks*/
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
+/** @ODM\Document(collection="assessments") @HasLifecycleCallbacks*/
 class Assessment
 {
-	/** @Id */
+	/** @ODM\Id */
     private $id;
 
-    /** @ReferenceOne(targetDocument="Documents\Game") */
+    /** @ODM\ReferenceOne(targetDocument="Documents\Game") */
     private $game;
 
-    /** @ReferenceOne(targetDocument="Documents\User") */
+    /** @ODM\ReferenceOne(targetDocument="Documents\User") */
     private $user;
 
-    /** @Boolean */
+    /** @ODM\Boolean */
     private $like;
 
-    /** @Date */
+    /** @ODM\Date */
     private $happened;
 
     public function setLike($like)
