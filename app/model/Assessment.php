@@ -1,7 +1,7 @@
 <?php
 namespace Documents;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-/** @ODM\Document(collection="assessments") @HasLifecycleCallbacks*/
+/** @ODM\Document @HasLifecycleCallbacks*/
 class Assessment
 {
 	/** @ODM\Id */

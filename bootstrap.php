@@ -6,6 +6,8 @@ use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 
+
+
 $connection = new Connection();
 
 $config = new Configuration();
@@ -20,10 +22,6 @@ AnnotationDriver::registerAnnotationClasses();
 
 $dm = DocumentManager::create($connection, $config);
 
-$Game = new Documents\Game();
-$Game->setName('GTA');
-$Game->addGenre('3D');
-$dm->persist($Game);
-$dm->flush();
+
 
 ?>

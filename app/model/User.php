@@ -2,7 +2,7 @@
 namespace Documents;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 
-/** @ODM\Document(collection="users") */
+/** @ODM\Document */
 class User
 {
 	/** @ODM\Id */
