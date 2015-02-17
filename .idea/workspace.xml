@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ed2016-2a7d-4a46-b219-c76aa7af4fab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controller/BaseController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controller/GameController.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/controller/UpdateController.php" afterPath="$PROJECT_DIR$/app/controller/GameUpdateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/model/Game.php" afterPath="$PROJECT_DIR$/app/model/Game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/GameUpdateController.php" afterPath="$PROJECT_DIR$/app/controller/GameUpdateController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Index.php" afterPath="$PROJECT_DIR$/public/Index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap.php" afterPath="$PROJECT_DIR$/bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nogoodgamez.iws" />
@@ -31,34 +36,25 @@
       <file leaf-file-name="bootstrap.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="-2.0370371" vertical-offset="17" max-vertical-offset="522">
+            <state line="1" column="82" selection-start="88" selection-end="88" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="144">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Game.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="16" selection-start="101" selection-end="101" vertical-scroll-proportion="4.4814816" vertical-offset="211" max-vertical-offset="1278">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameUpdateController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GameUpdateController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="46" selection-start="404" selection-end="404" vertical-scroll-proportion="0.55598456" vertical-offset="0" max-vertical-offset="576">
+            <state line="5" column="0" selection-start="46" selection-end="92" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="522">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assessment.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
+      <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="19" selection-start="649" selection-end="724" vertical-scroll-proportion="-12.518518" vertical-offset="238" max-vertical-offset="1332">
+            <state line="19" column="0" selection-start="415" selection-end="415" vertical-scroll-proportion="-9.185185" vertical-offset="94" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -67,16 +63,29 @@
       <file leaf-file-name="Index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="288">
-              <folding />
+            <state line="34" column="18" selection-start="988" selection-end="988" vertical-scroll-proportion="-22.666666" vertical-offset="0" max-vertical-offset="1080">
+              <folding>
+                <element signature="e#132#164#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoload.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <file leaf-file-name="QueryController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controller/QueryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="234">
+            <state line="8" column="16" selection-start="141" selection-end="141" vertical-scroll-proportion="0.47213113" vertical-offset="0" max-vertical-offset="558">
+              <folding>
+                <element signature="e#30#71#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/Game.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="30" selection-start="808" selection-end="808" vertical-scroll-proportion="-26.555555" vertical-offset="237" max-vertical-offset="1512">
               <folding />
             </state>
           </provider>
@@ -99,16 +108,17 @@
         <option value="$PROJECT_DIR$/app/model/game.php" />
         <option value="$PROJECT_DIR$/app/model/user.php" />
         <option value="$PROJECT_DIR$/app/model/Assessment.php" />
-        <option value="$PROJECT_DIR$/app/model/Game.php" />
         <option value="$PROJECT_DIR$/app/controller/UpdateController" />
         <option value="$PROJECT_DIR$/app/controller/Udater.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/controller/Updater.php" />
-        <option value="$PROJECT_DIR$/bootstrap.php" />
-        <option value="$PROJECT_DIR$/public/Index.php" />
         <option value="$PROJECT_DIR$/app/controller/GameController.php" />
         <option value="$PROJECT_DIR$/app/controller/UpdateController.php" />
+        <option value="$PROJECT_DIR$/bootstrap.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/controller/GameUpdateController.php" />
+        <option value="$PROJECT_DIR$/app/model/Game.php" />
+        <option value="$PROJECT_DIR$/public/Index.php" />
+        <option value="$PROJECT_DIR$/app/controller/QueryController.php" />
       </list>
     </option>
   </component>
@@ -116,7 +126,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="10" />
     <option name="y" value="28" />
-    <option name="width" value="1339" />
+    <option name="width" value="1342" />
     <option name="height" value="707" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -145,7 +155,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -262,12 +271,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -275,8 +286,13 @@
       <recent name="$PROJECT_DIR$/app/model" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.bootstrap.php">
+  <component name="RunManager" selected="PHP Script.Index.php">
     <configuration default="false" name="bootstrap.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/bootstrap.php">
+      <RunnerSettings RunnerId="PhpRunner" />
+      <ConfigurationWrapper RunnerId="PhpRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/public/Index.php">
       <RunnerSettings RunnerId="PhpRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
       <method />
@@ -294,12 +310,14 @@
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="PHP Script.bootstrap.php" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.Index.php" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.bootstrap.php" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.Index.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.bootstrap.php" />
       </list>
     </recent_temporary>
   </component>
@@ -330,25 +348,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="28" width="1339" height="707" extended-state="0" />
-    <editor active="true" />
+    <frame x="10" y="28" width="1342" height="707" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26100385" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26810476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -373,6 +391,76 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="82" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0" vertical-offset="94" max-vertical-offset="450">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="46" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0" vertical-offset="445" max-vertical-offset="972">
+          <folding>
+            <element signature="e#132#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="5" selection-start="314" selection-end="314" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="19" selection-start="649" selection-end="724" vertical-scroll-proportion="0.0" vertical-offset="576" max-vertical-offset="1332" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="306">
+          <folding>
+            <element signature="e#132#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="576">
           <folding />
         </state>
@@ -380,9 +468,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="324">
-          <folding />
-        </state>
+        <state line="12" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Game.php">
@@ -395,15 +481,15 @@
     <entry file="file://$PROJECT_DIR$/public/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="306">
-          <folding />
+          <folding>
+            <element signature="e#132#164#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap.php">
@@ -415,9 +501,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="324">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Game.php">
@@ -430,15 +514,15 @@
     <entry file="file://$PROJECT_DIR$/public/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="306">
-          <folding />
+          <folding>
+            <element signature="e#132#164#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap.php">
@@ -473,11 +557,6 @@
         <state line="3" column="0" selection-start="88" selection-end="88" vertical-scroll-proportion="0.05901639" vertical-offset="36" max-vertical-offset="828" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="43" selection-start="342" selection-end="342" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="450" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fetcher/game_parse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342" />
@@ -485,50 +564,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.4169884" vertical-offset="0" max-vertical-offset="518">
-          <folding />
-        </state>
+        <state line="12" column="0" selection-start="304" selection-end="304" vertical-scroll-proportion="0.4169884" vertical-offset="0" max-vertical-offset="518" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1332" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/RuntimeReflectionService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1600" selection-end="1600" vertical-scroll-proportion="0.33442622" vertical-offset="276" max-vertical-offset="1620" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/AbstractClassMetadataFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="267" column="0" selection-start="8289" selection-end="8289" vertical-scroll-proportion="0.3321918" vertical-offset="4403" max-vertical-offset="7020" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/common/lib/Doctrine/Common/Persistence/Mapping/MappingException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="0" selection-start="3086" selection-end="3086" vertical-scroll-proportion="0.52786887" vertical-offset="1279" max-vertical-offset="1584" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="-2.0370371" vertical-offset="17" max-vertical-offset="522">
+        <state line="1" column="82" selection-start="88" selection-end="88" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="144">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="415" selection-end="415" vertical-scroll-proportion="-9.185185" vertical-offset="94" max-vertical-offset="450">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="16" selection-start="101" selection-end="101" vertical-scroll-proportion="4.4814816" vertical-offset="211" max-vertical-offset="1278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="288">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="19" selection-start="649" selection-end="724" vertical-scroll-proportion="-12.518518" vertical-offset="238" max-vertical-offset="1332">
+        <state line="53" column="30" selection-start="808" selection-end="808" vertical-scroll-proportion="-26.555555" vertical-offset="237" max-vertical-offset="1512">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="46" selection-start="404" selection-end="404" vertical-scroll-proportion="0.55598456" vertical-offset="0" max-vertical-offset="576">
+        <state line="5" column="0" selection-start="46" selection-end="92" vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="522">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="18" selection-start="988" selection-end="988" vertical-scroll-proportion="-22.666666" vertical-offset="0" max-vertical-offset="1080">
+          <folding>
+            <element signature="e#132#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/QueryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="16" selection-start="141" selection-end="141" vertical-scroll-proportion="0.47213113" vertical-offset="0" max-vertical-offset="558">
+          <folding>
+            <element signature="e#30#71#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

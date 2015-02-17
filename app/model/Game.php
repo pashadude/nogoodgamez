@@ -15,6 +15,9 @@ class Game
     private $pic;
 
     /** @ODM\String */
+    private $platform;
+
+    /** @ODM\String */
     private $name;
 
     /** @ODM\Collection*/
@@ -36,9 +39,19 @@ class Game
         $this->pic = $uri;
     }
 
+    public function setPlatform($platform)
+    {
+        $this->platform = $platform;
+    }
+
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getPlatform()
+    {
+        return $this->platform;
     }
 
     public function getName()

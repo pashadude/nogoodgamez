@@ -11,7 +11,7 @@
     	"psr-4":{
     		"Fetcher\\": "fetcher/",
             "Documents\\": "app/model/",
-            "Controlers\\": "app/controller"
+            "Controllers\\": "app/controller/"
         },
         
         "files": ["fetcher/helpers.php"]

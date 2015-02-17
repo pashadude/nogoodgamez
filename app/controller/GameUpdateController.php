@@ -1,16 +1,13 @@
 <?php
-namespace Controller;
-use Documents\Game;
+namespace Controllers;
+use Documents;
+
 
 class GameUpdateController{
     private $game;
 
-    public function __construct(Game $game) {
+    public function __construct(Documents\Game $game) {
         $this->game = $game;
-    }
-
-    public function findGame($dm, $game_name){
-        return $dm->getRepository('Game')->findOneBy(array('name' => $game_name));
     }
 
     public function updateGame($values) {

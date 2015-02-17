@@ -4,9 +4,52 @@ define('ROOT', dirname(dirname(__FILE__)));
 
 require_once (ROOT . DS . 'bootstrap.php');
 
-use Documents;
-use Controllers;
+
+use Doctrine\MongoDB\Connection;
+use Doctrine\ODM\MongoDB\Configuration;
+use Doctrine\ODM\MongoDB\DocumentManager;
+use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
+use Documents\Game;
+use Controllers\GameUpdateController;
+use Controllers\QueryController;
 
 
+
+$connection = new Connection();
+
+$config = new Configuration();
+$config->setProxyDir(__DIR__ . '/Proxies');
+$config->setProxyNamespace('Proxies');
+$config->setHydratorDir(__DIR__ . '/Hydrators');
+$config->setHydratorNamespace('Hydrators');
+$config->setDefaultDB('nogoodgames');
+$config->setMetadataDriverImpl(AnnotationDriver::create(ROOT . DS .'app/model'));
+
+AnnotationDriver::registerAnnotationClasses();
+
+$dm = DocumentManager::create($connection, $config);
+
+$game = new Game();
+$finder = new QueryController($dm);
+$result = $finder->findOneItem($game,'name','GTA');
+var_dump($result);
+//$updater = new GameUpdateController($game);
+
+
+
+//query via builder
+/*
+$user = $dm->createQueryBuilder(get_class($game))
+    ->field('name')->equals($game_name)
+    ->hydrate(false)
+    ->getQuery()
+    ->getSingleResult();*/
+
+
+//simple finder query
+//$user = $dm->getRepository('Documents\Game')->findBy(array('name' => 'GTA'));
+
+
+//var_dump($user);
 
 ?>
