@@ -13,8 +13,13 @@ class GameUpdateController{
     public function updateGame($values) {
         $this->game->setName($values['name']);
         $this->game->setPic($values['picurl']);
+
+        foreach ($values['platforms'] as $platform) {
+            $this->game->addPlatform($platform);
+        }
+
         foreach ($values['genres'] as $genre) {
-                  $this->game->addGenre($genre);
+            $this->game->addGenre($genre);
         }
     }
 }

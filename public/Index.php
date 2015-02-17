@@ -30,10 +30,39 @@ AnnotationDriver::registerAnnotationClasses();
 $dm = DocumentManager::create($connection, $config);
 
 $game = new Game();
+
+$gamedata = array();
+
+
+//test game input
+/*
+$gamedata['name'] = 'Grand Theft Auto V';
+$gamedata['picurl'] = 'http://static1.gamespot.com/uploads/scale_tiny/469/4693985/2330894-2322534-2227554-grand%2Btheft%2Bauto%2Bv.jpg';
+$gamedata['genres'][0] = '3D';
+$gamedata['genres'][1] = 'First-Person';
+$gamedata['genres'][2] = 'Third-Person';
+$gamedata['genres'][3] = 'Shooter';
+$gamedata['genres'][4] = 'Adventure';
+$gamedata['genres'][5] = 'Open-World';
+$gamedata['genres'][6] = 'Action';
+$gamedata['platforms'][0] = 'PS 3';
+$gamedata['platforms'][1] = 'PS 4';
+*/
+
 $finder = new QueryController($dm);
-$result = $finder->findOneItem($game,'name','GTA');
-var_dump($result);
-//$updater = new GameUpdateController($game);
+
+$query = $finder->findOneItem($game,'name',$gamedata['name']);
+//var_dump ($query);
+
+if ($query === NULL) {
+    $updater = new GameUpdateController($game);
+    $updater->updateGame($gamedata);
+    $dm->persist($game);
+    $dm->flush();
+} else {
+    echo "dat gaim alreedy eksists, nigga";
+}
+
 
 
 
