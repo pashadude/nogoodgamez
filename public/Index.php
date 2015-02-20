@@ -15,6 +15,8 @@ use Controllers\QueryController;
 
 
 
+
+
 $connection = new Connection();
 
 $config = new Configuration();
@@ -30,8 +32,45 @@ AnnotationDriver::registerAnnotationClasses();
 $dm = DocumentManager::create($connection, $config);
 
 $game = new Game();
-
 $gamedata = array();
+
+$csv = new parseCSV();
+$csv1 = new parseCSV();
+
+$csv->auto(ROOT.DS.'data/psn_gamez.csv');
+$csv1->auto(ROOT.DS.'data/gmz.csv');
+
+$k = 0;
+
+foreach ($csv->data as $gamelist_data){
+   $gamedata['name'] = $gamelist_data['Game'];
+   if (strlen($gamelist_data['Platforms']) == 8) {
+       $gamedata['platforms'][0] = 'PS 3';
+       $gamedata['platforms'][1] = 'PS 4';
+   } elseif ($gamelist_data['Platforms'] == 'PS3') {
+       $gamedata['platforms'][0] = 'PS 3';
+   } else {
+       $gamedata['platforms'][0] = 'PS 4';
+   }
+   $tech_name = make_urlname($gamedata['name']);
+   foreach($csv1->data as $games_custom) {
+       if($tech_name == $games_custom['url_rules']){
+           $tech_name = $games_custom['url_custom'];
+           break;
+       }
+   }
+   if($tech_name != "game_dismissed"){
+       echo $gamelist_data['Game'];
+       print_r(get_game($tech_name));
+   }
+   //echo "<br>";
+   $k++;
+   if($k == 10) {break;}
+}
+
+
+
+
 
 
 //test game input
@@ -47,7 +86,7 @@ $gamedata['genres'][5] = 'Open-World';
 $gamedata['genres'][6] = 'Action';
 $gamedata['platforms'][0] = 'PS 3';
 $gamedata['platforms'][1] = 'PS 4';
-*/
+
 
 $finder = new QueryController($dm);
 
@@ -62,7 +101,7 @@ if ($query === NULL) {
 } else {
     echo "dat gaim alreedy eksists, nigga";
 }
-
+*/
 
 
 
@@ -78,7 +117,7 @@ $user = $dm->createQueryBuilder(get_class($game))
 //simple finder query
 //$user = $dm->getRepository('Documents\Game')->findBy(array('name' => 'GTA'));
 
+//巴莎
 
-//var_dump($user);
 
 ?>
