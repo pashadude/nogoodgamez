@@ -41,7 +41,7 @@ class Game
 
     public function addPlatform($platform)
     {
-        $this->platform[] = $platform;
+        $this->platforms[] = $platform;
     }
 
     public function getId()
