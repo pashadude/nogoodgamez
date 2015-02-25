@@ -29,7 +29,9 @@ AnnotationDriver::registerAnnotationClasses();
 
 $dm = DocumentManager::create($connection, $config);
 
-
+$request = get_profile('WAR-666-MACHINE');
+$data = get_profiledata_psnprofiles($request['body']);
+var_dump(fetch_profiledata_psnprofiles($data));
 
 //巴莎
 

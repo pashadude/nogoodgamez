@@ -85,11 +85,40 @@ function get_gamedata_gamespot($html) {
 
 function get_profiledata_psnprofiles($html){
     $doc = phpQuery::newDocumentHTML($html);
+
+
     $array = [
         'average_completion' => pq('span[title*="average completion"]',$doc)->text(),
-
+        'games' => $doc->find('a.game-title')->text(),
+        'platforms'=>pq('.title.sort',$doc)->text(),
+        'completions'=> pq('.progress.sort',$doc)->text(),
     ];
+    return $array;
 }
+
+function fetch_profiledata_psnprofiles($profile_data){
+    $results['average'] = intval(str_replace("%","",$profile_data['average_completion']));
+    $results['platforms'] = preg_split('/\\r\\n|\\r|\\n/', $profile_data['platforms']);
+    $results['games'] = preg_split('/\\r\\n|\\r|\\n/', $profile_data['games']);
+    //$count = 0;
+    do{
+        $profile_data['completions'] = preg_replace('/\\s[0](?=[^-\\s])/', ' 0 ',$profile_data['completions'], -1, $count);
+    } while ($count > 0);
+    $results['completions'] =  preg_split('/\\r\\n|\\r|\\n|\\s/', $profile_data['completions']);
+    $k = count($results['completions']);
+    for ($i=0;$i < $k; $i++){
+        $results['completions'][$i] = intval( $results['completions'][$i]);
+        $results['games'][$i] = preg_replace("/(™|®|©|&trade;|&reg;|&copy;|&#8482;|&#174;|&#169;)/", "",$results['games'][$i]);
+    }
+    return ($results);
+}
+
+function parse_profiledata_psnfprofiles($values){
+
+}
+
+
+
 
 
 ?>
