@@ -43,6 +43,31 @@ function get_profile($profile_name){
     return $profile;
 }
 
+function get_leaderboard ($page_name){
+    $uri = "http://psntrophyleaders.com/leaderboard/main/".$page_name;
+    $k = 1;
+    $try = true;
+    $page = array();
+    do {
+        try {
+            $response = Request::get($uri)
+                ->addHeader('User-Agent', useragent())
+                ->followRedirects(20)
+                ->send();
+            $try = false;
+            $page['code'] = $response->code;
+            if($page['code'] == 200){
+                $page['body'] = $response->body;
+            }
+        } catch (\Httpful\Exception\ConnectionErrorException $e) {
+            sleep(5);
+            $try = ++$k < 6;
+        }
+    } while($try);
+
+    return $page;
+}
+
 function get_game($game_name){
     $uri = "http://www.gamespot.com/{$game_name}/";
 
@@ -114,6 +139,31 @@ function fetch_profiledata_psnprofiles($profile_data){
 }
 
 function parse_profiledata_psnfprofiles($values){
+   $k = count($values['completions']);
+   $j = 0;
+   for ($i=0;$i < $k; $i++) {
+       //echo strpos($values['platforms'][$i],'-ps4')." ";
+       //echo $values['completions'][$i]." ;";
+       if(strpos($values['platforms'][$i],'-ps4') != NULL || strpos($values['platforms'][$i],'-ps3') != NULL ){
+            if($values['completions'][$i] > $values['average']){
+                $games[$j] = $values['games'][$i];
+                $j++;
+            }
+       }
+   }
+   return $games;
+}
+
+function parse_leaderboard($html){
+    $doc = phpQuery::newDocumentHTML($html);
+    $players = $doc->find('a.user-select');
+
+    foreach ($players as $player) {
+        $pq = pq($player);
+        $users[] = $pq->text();
+    }
+
+    return $users;
 
 }
 
