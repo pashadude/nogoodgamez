@@ -22,24 +22,22 @@ namespace Doctrine\MongoDB;
 /**
  * Iterator interface.
  *
- * @license     http://www.opensource.org/licenses/mit-license.php MIT
- * @link        www.doctrine-project.com
- * @since       1.0
- * @author      Jonathan H. Wage <jonwage@gmail.com>
+ * @since  1.0
+ * @author Jonathan H. Wage <jonwage@gmail.com>
  */
 interface Iterator extends \Iterator, \Countable
 {
+    /**
+     * Return the first element or null if no elements exist.
+     *
+     * @return array|object|null
+     */
+    function getSingleResult();
+
     /**
      * Return all elements as an array.
      *
      * @return array
      */
     function toArray();
-
-    /**
-     * Return the first element from the result set.
-     *
-     * @return array|object|null
-     */
-    function getSingleResult();
 }

@@ -22,24 +22,32 @@ namespace Doctrine\MongoDB\Event;
 use Doctrine\Common\EventArgs as BaseEventArgs;
 
 /**
- * Update event args.
+ * Event args for update queries.
  *
- * @license     http://www.opensource.org/licenses/mit-license.php MIT
- * @link        www.doctrine-project.com
- * @since       1.0
- * @author      Jonathan H. Wage <jonwage@gmail.com>
+ * @since  1.0
+ * @author Jonathan H. Wage <jonwage@gmail.com>
  */
 class UpdateEventArgs extends BaseEventArgs
 {
     private $invoker;
-    private $query = array();
-    private $newObj = array();
+    private $query;
+    private $newObj;
+    private $options;
 
-    public function __construct($invoker, &$query, &$newObj)
+    /**
+     * Constructor.
+     *
+     * @param object $invoker
+     * @param array  $query
+     * @param array  $newObj
+     * @param array  $options
+     */
+    public function __construct($invoker, array $query, array $newObj, array $options = array())
     {
         $this->invoker = $invoker;
         $this->query = $query;
         $this->newObj = $newObj;
+        $this->options = $options;
     }
 
     public function getInvoker()
@@ -55,5 +63,10 @@ class UpdateEventArgs extends BaseEventArgs
     public function getNewObj()
     {
         return $this->newObj;
+    }
+
+    public function getOptions()
+    {
+        return $this->options;
     }
 }

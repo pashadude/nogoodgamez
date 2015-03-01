@@ -9,11 +9,11 @@
 
     "autoload": {
     	"psr-4":{
-    		"Fetcher\\": "fetcher/",
+    		"Fetcher\\": "app/fetcher/",
             "Documents\\": "app/model/",
             "Controllers\\": "app/controller/"
         },
         
-        "files": ["fetcher/helpers.php"]
+        "files": ["app/fetcher/helpers.php"]
     }
 }

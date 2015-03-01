@@ -23,24 +23,28 @@ namespace Doctrine\MongoDB;
  * EagerCursor wraps a Cursor instance and fetches all of its results upon
  * initialization.
  *
- * @license     http://www.opensource.org/licenses/mit-license.php MIT
- * @link        www.doctrine-project.org
- * @since       1.0
- * @author      Jonathan H. Wage <jonwage@gmail.com>
+ * @since  1.0
+ * @author Jonathan H. Wage <jonwage@gmail.com>
  */
 class EagerCursor implements Iterator
 {
     /**
+     * The Cursor instance being wrapped.
+     *
      * @var Cursor
      */
     protected $cursor;
 
     /**
+     * The Cursor results.
+     *
      * @var array
      */
     protected $data = array();
 
     /**
+     * Whether the internal data has been initialized.
+     *
      * @var boolean
      */
     protected $initialized = false;
@@ -48,7 +52,7 @@ class EagerCursor implements Iterator
     /**
      * Constructor.
      *
-     * @param Cursor $cursor Cursor to wrap
+     * @param Cursor $cursor
      */
     public function __construct(Cursor $cursor)
     {
@@ -56,83 +60,7 @@ class EagerCursor implements Iterator
     }
 
     /**
-     * Return the wrapped cursor.
-     *
-     * @return Cursor
-     */
-    public function getCursor()
-    {
-        return $this->cursor;
-    }
-
-    /**
-     * Return whether the internal data has been initialized.
-     *
-     * @return boolean
-     */
-    public function isInitialized()
-    {
-        return $this->initialized;
-    }
-
-    /**
-     * Initialize the internal data by converting the cursor to an array.
-     */
-    public function initialize()
-    {
-        if ($this->initialized === false) {
-            $this->data = $this->cursor->toArray();
-        }
-        $this->initialized = true;
-    }
-
-    /**
-     * @see \Iterator::rewind()
-     */
-    public function rewind()
-    {
-        $this->initialize();
-        reset($this->data);
-    }
-
-    /**
-     * @see \Iterator::current()
-     */
-    public function current()
-    {
-        $this->initialize();
-        return current($this->data);
-    }
-
-    /**
-     * @see \Iterator::key()
-     */
-    public function key()
-    {
-        $this->initialize();
-        return key($this->data);
-    }
-
-    /**
-     * @see \Iterator::next()
-     */
-    public function next()
-    {
-        $this->initialize();
-        next($this->data);
-    }
-
-    /**
-     * @see \Iterator::valid()
-     */
-    public function valid()
-    {
-        $this->initialize();
-        return key($this->data) !== null;
-    }
-
-    /**
-     * @see \Countable::count()
+     * @see http://php.net/manual/en/countable.count.php
      */
     public function count()
     {
@@ -141,12 +69,22 @@ class EagerCursor implements Iterator
     }
 
     /**
-     * @see Iterator::toArray()
+     * @see http://php.net/manual/en/iterator.current.php
      */
-    public function toArray()
+    public function current()
     {
         $this->initialize();
-        return $this->data;
+        return current($this->data);
+    }
+
+    /**
+     * Return the wrapped Cursor.
+     *
+     * @return Cursor
+     */
+    public function getCursor()
+    {
+        return $this->cursor;
     }
 
     /**
@@ -161,5 +99,71 @@ class EagerCursor implements Iterator
         }
 
         return null;
+    }
+
+    /**
+     * Initialize the internal data by converting the Cursor to an array.
+     */
+    public function initialize()
+    {
+        if ($this->initialized === false) {
+            $this->data = $this->cursor->toArray();
+        }
+        $this->initialized = true;
+    }
+
+    /**
+     * Return whether the internal data has been initialized.
+     *
+     * @return boolean
+     */
+    public function isInitialized()
+    {
+        return $this->initialized;
+    }
+
+    /**
+     * @see http://php.net/manual/en/iterator.key.php
+     */
+    public function key()
+    {
+        $this->initialize();
+        return key($this->data);
+    }
+
+    /**
+     * @see http://php.net/manual/en/iterator.next.php
+     */
+    public function next()
+    {
+        $this->initialize();
+        next($this->data);
+    }
+
+    /**
+     * @see http://php.net/manual/en/iterator.rewind.php
+     */
+    public function rewind()
+    {
+        $this->initialize();
+        reset($this->data);
+    }
+
+    /**
+     * @see Iterator::toArray()
+     */
+    public function toArray()
+    {
+        $this->initialize();
+        return $this->data;
+    }
+
+    /**
+     * @see http://php.net/manual/en/iterator.valid.php
+     */
+    public function valid()
+    {
+        $this->initialize();
+        return key($this->data) !== null;
     }
 }

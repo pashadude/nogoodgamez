@@ -22,99 +22,186 @@ namespace Doctrine\MongoDB;
 use ArrayAccess;
 
 /**
- * ArrayIterator
+ * ArrayIterator is used to encapsulate document results from commands.
  *
- * @license     http://www.opensource.org/licenses/mit-license.php MIT
- * @since       1.0
- * @author      Jonathan H. Wage <jonwage@gmail.com>
+ * @since  1.0
+ * @author Jonathan H. Wage <jonwage@gmail.com>
  */
 class ArrayIterator implements Iterator, ArrayAccess
 {
+    /**
+     * @var array
+     */
     private $elements;
 
+    /**
+     * @var array
+     */
+    private $commandResult;
+
+    /**
+     * Constructor.
+     *
+     * @param array $elements
+     */
     public function __construct(array $elements = array())
     {
         $this->elements = $elements;
     }
 
-    public function first()
-    {
-        return reset($this->elements);
-    }
-
-    public function last()
-    {
-        return end($this->elements);
-    }
-
-    public function key()
-    {
-        return key($this->elements);
-    }
-
-    public function next()
-    {
-        next($this->elements);
-    }
-
-    public function current()
-    {
-        return current($this->elements);
-    }
-
+    /**
+     * @see http://php.net/manual/en/countable.count.php
+     */
     public function count()
     {
         return count($this->elements);
     }
 
-    public function rewind()
+    /**
+     * @see http://php.net/manual/en/iterator.current.php
+     */
+    public function current()
+    {
+        return current($this->elements);
+    }
+
+    /**
+     * Return the first element in the array, or false if the array is empty.
+     *
+     * @see http://php.net/manual/en/function.reset.php
+     * @return array|object|boolean
+     */
+    public function first()
+    {
+        return reset($this->elements);
+    }
+
+    /**
+     * Get the full result document for the MongoDB command (if available).
+     *
+     * @since  1.1
+     * @return array|null
+     */
+    public function getCommandResult()
+    {
+        return $this->commandResult;
+    }
+
+    /**
+     * Set the full result document for the MongoDB command.
+     *
+     * @since  1.1
+     * @param array $commandResult
+     */
+    public function setCommandResult(array $commandResult)
+    {
+        $this->commandResult = $commandResult;
+    }
+
+    /**
+     * @see Iterator::getSingleResult()
+     */
+    public function getSingleResult()
     {
         reset($this->elements);
-    }
-
-    public function reset()
-    {
+        $result = key($this->elements) !== null ? current($this->elements) : null;
         reset($this->elements);
+
+        return $result;
     }
 
-    public function valid()
+    /**
+     * @see http://php.net/manual/en/iterator.key.php
+     */
+    public function key()
     {
-        return current($this->elements) !== false;
+        return key($this->elements);
     }
 
-    public function offsetSet($offset, $value)
+    /**
+     * Return the last element in the array, or false if the array is empty.
+     *
+     * @see http://php.net/manual/en/function.end.php
+     * @return array|object|boolean
+     */
+    public function last()
     {
-        $this->elements[$offset] = $value;
+        return end($this->elements);
     }
 
+    /**
+     * @see http://php.net/manual/en/iterator.next.php
+     */
+    public function next()
+    {
+        next($this->elements);
+    }
+
+    /**
+     * @see http://php.net/manual/en/arrayaccess.offsetexists.php
+     */
     public function offsetExists($offset)
     {
         return isset($this->elements[$offset]);
     }
 
-    public function offsetUnset($offset)
-    {
-        unset($this->elements[$offset]);
-    }
-
+    /**
+     * @see http://php.net/manual/en/arrayaccess.offsetget.php
+     */
     public function offsetGet($offset)
     {
         return isset($this->elements[$offset]) ? $this->elements[$offset] : null;
     }
 
+    /**
+     * @see http://php.net/manual/en/arrayaccess.offsetset.php
+     */
+    public function offsetSet($offset, $value)
+    {
+        if ($offset === null) {
+            $this->elements[] = $value;
+        } else {
+            $this->elements[$offset] = $value;
+        }
+    }
+
+    /**
+     * @see http://php.net/manual/en/arrayaccess.offsetunset.php
+     */
+    public function offsetUnset($offset)
+    {
+        unset($this->elements[$offset]);
+    }
+
+    /**
+     * Alias of {@link ArrayIterator::rewind()}.
+     */
+    public function reset()
+    {
+        reset($this->elements);
+    }
+
+    /**
+     * @see http://php.net/manual/en/iterator.rewind.php
+     */
+    public function rewind()
+    {
+        reset($this->elements);
+    }
+
+    /**
+     * @see Iterator::toArray()
+     */
     public function toArray()
     {
         return $this->elements;
     }
 
-    public function getSingleResult()
+    /**
+     * @see http://php.net/manual/en/iterator.valid.php
+     */
+    public function valid()
     {
-        $result = null;
-        $this->valid() ?: $this->next();
-        if ($this->valid()) {
-            $result = $this->current();
-        }
-        $this->reset();
-        return $result ? $result : null;
+        return key($this->elements) !== null;
     }
 }

@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Fetcher\\' => array($baseDir . '/fetcher'),
+    'Fetcher\\' => array($baseDir . '/app/fetcher'),
     'Documents\\' => array($baseDir . '/app/model'),
     'Controllers\\' => array($baseDir . '/app/controller'),
 );
