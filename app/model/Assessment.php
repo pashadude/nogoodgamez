@@ -1,16 +1,19 @@
 <?php
 namespace Documents;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
-/** @ODM\Document @HasLifecycleCallbacks*/
+/**
+ * @ODM\Document
+ */
+
 class Assessment
 {
 	/** @ODM\Id */
     private $id;
 
-    /** @ODM\ReferenceOne(targetDocument="Documents\Game") */
+    /** @ODM\ReferenceOne(targetDocument="Documents\Game", nullable=true) */
     private $game;
 
-    /** @ODM\ReferenceOne(targetDocument="Documents\User") */
+    /** @ODM\ReferenceOne(targetDocument="Documents\User", nullable=true) */
     private $user;
 
     /** @ODM\Boolean */
@@ -32,7 +35,7 @@ class Assessment
 
 
     public function setGame(Game $game) { $this->game = $game; }
-    
+
     public function setUser (User $user) { $this->user = $user; }
 
 

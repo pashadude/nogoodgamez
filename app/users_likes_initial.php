@@ -10,8 +10,11 @@ use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 use Documents\Game;
 use Documents\User;
+use Documents\Assessment;
 use Controllers\GameUpdateController;
 use Controllers\QueryController;
+use Controllers\AssessmentUpdateController;
+use Controllers\UserUpdateController;
 
 $csv = new parseCSV();
 $csv->auto(ROOT.DS.'data/games_not_in_list.csv');
@@ -29,19 +32,6 @@ $config->setMetadataDriverImpl(AnnotationDriver::create(ROOT . DS .'app/model'))
 AnnotationDriver::registerAnnotationClasses();
 
 $dm = DocumentManager::create($connection, $config);
-/*
-$request = get_profile('WAR-666-MACHINE');
-$data = get_profiledata_psnprofiles($request['body']);
-$results = fetch_profiledata_psnprofiles($data);
-$games_to_like = parse_profiledata_psnfprofiles($results);
-var_dump($games_to_like);*/
-
-/*
-$page = 1001;
-$leaderboard = get_leaderboard($page);
-//var_dump($leaderboard);
-$users = parse_leaderboard($leaderboard['body']);
-var_dump($users);*/
 
 $page_start = 1001;
 $page_finished = 1001;
@@ -60,35 +50,37 @@ for ($i = $page_start; $i <= $page_finished; $i++ ) {
             if ($request['code'] != 200){
                 echo 'player ' .$user.' has not been fetched with code '.$request['code'];
             } else {
-                //$player = new User();
+                $player = new User();
+
+                $updater = new UserUpdateController($player);
+                $updater->updateInitialUser();
+
+                $dm->persist($player);
+                $dm->flush();
+
+                $user_id = $player->getId();
+
                 $data = get_profiledata_psnprofiles($request['body']);
                 $results = fetch_profiledata_psnprofiles($data);
                 $games_to_like = parse_profiledata_psnfprofiles($results);
                 foreach ($games_to_like as $game_like) {
-                    $game = new Game();
 
                     foreach($csv->data as $games_custom) {
                         if($game_like == $games_custom['psnprofiles']){
                             $game_like = $games_custom['matching'];
-                            //echo $game_like;
                             break;
                         }
                     }
 
-                    $finder = new QueryController($dm);
+                    $game = new Game();
+                    $assessment = new Assessment();
 
-                    $query = $finder->findOneItem($game,'name',$game_like);
-                    if ($query === NULL) {
-                        if (!(in_array($game_like, $games_not_in_list))){
-                            $games_not_in_list[] = $game_like;
-                        }
+                    $liker = new AssessmentUpdateController($user_id, $game_like, $assessment);
+                    $liker->updateAssessment(1, $dm);
 
-                    }  else {
-                        if (!(in_array($game_like, $games_in_list))){
-                            $games_in_list[] = $game_like;
-                        }
-                    }
-                    //make_like($player, $game);*/
+                    $dm->persist($assessment);
+                    $dm->flush();
+
                 }
 
             }
@@ -99,7 +91,7 @@ for ($i = $page_start; $i <= $page_finished; $i++ ) {
 }
 
 //var_dump ($games_in_list);
-print_r($games_not_in_list);
+//print_r($games_not_in_list);
 
 
 
