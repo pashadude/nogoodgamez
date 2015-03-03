@@ -12,13 +12,17 @@ class QueryController{
         $this->dm = $dm;
     }
 
-    public function findOneItem ($collection_elem, $field, $value) {
+    public function findOneItem($collection_elem, $field, $value) {
         $result = $this->dm->createQueryBuilder(get_class($collection_elem))
             ->field($field)->equals($value)
             ->hydrate(false)
             ->getQuery()
             ->getSingleResult();
         return $result;
+    }
+
+    public function findById($id, $collection_elem) {
+        return $this->dm->find(get_class($collection_elem), $id);
     }
 }
 

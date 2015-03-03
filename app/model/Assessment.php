@@ -29,19 +29,11 @@ class Assessment
         $this->happened = $happened;
     }
 
-    public function addGame ($game_name){
-        $game = $dm->getRepository('Game')->findOneBy(array('name' => $game_name));
-        $this->game = $game;
-    }
 
-    public function addUser ($user_name){
-    	$game = $dm->getRepository('User')->findOneBy(array('name' => $user_name));
-        $this->user = $user;
-    }
 
     public function setGame(Game $game) { $this->game = $game; }
     
-    public function setUser(User $user) { $this->user = $user; }
+    public function setUser (User $user) { $this->user = $user; }
 
 
     public function getId()
