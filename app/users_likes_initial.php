@@ -33,8 +33,8 @@ AnnotationDriver::registerAnnotationClasses();
 
 $dm = DocumentManager::create($connection, $config);
 
-$page_start = 1001;
-$page_finished = 1001;
+$page_start = 801;
+$page_finished = 803;
 $games_in_list = array();
 $games_not_in_list = array();
 
