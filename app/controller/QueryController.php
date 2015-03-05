@@ -24,6 +24,15 @@ class QueryController{
     public function findById($id, $collection_elem) {
         return $this->dm->find(get_class($collection_elem), $id);
     }
+
+    public function giveDistinctValues ($collection_elem, $field) {
+        $results = $this->dm->createQueryBuilder(get_class($collection_elem))
+            ->distinct($field)
+            ->getQuery()
+            ->execute();
+        print_r($results);
+        return $results->elements;
+    }
 }
 
 

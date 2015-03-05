@@ -11,6 +11,7 @@ use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 use Documents\Game;
 use Documents\User;
+use Documents\View;
 use Documents\Assessment;
 use Controllers\GameUpdateController;
 use Controllers\QueryController;
@@ -41,14 +42,21 @@ session_start();
 <head>
     <title>NoGoodGamez</title>
 </head>
-<?
+
+<body>
+<!-- start padding container -->
+<div class="wrap">
+    <!-- start jtinder container -->
+    <div id="tinderslide">
+        <ul>
+<?php
 
 
 $current_ssid = session_id();
 
 $dm = DocumentManager::create($connection, $config);
 $user = new User();
-$query = new QueryController();
+$query = new QueryController($dm);
 $responce = $query->findOneItem($user,'session',$current_ssid);
 
 if($responce === NULL){
@@ -56,14 +64,42 @@ if($responce === NULL){
     $updater->updateRealUser($current_ssid);
     $dm->persist($user);
     $dm->flush();
+
+    $view = new \Views\NewUserView();
+    $cont = new NewUserViewController($user, $view);
+    echo $cont->generateView($dm);
     //launch view with random game
 } else {
     $user = $query->findById($responce['_id'], $user);
 
     //launch view with games recommended by prediction io
 }
+?>
+</ul>
+        </div>
+        <!-- end jtinder container -->
+    </div>
+    <!-- end padding container -->
 
+    <!-- jTinder trigger by buttons  -->
+    <div class="actions">
+        <a href="#" class="dislike"><i></i></a>
+        <a href="#" class="like"><i></i></a>
+    </div>
 
+    <!-- jTinder status text  -->
+    <div id="status"></div>
+
+    <!-- jQuery lib -->
+    <script type="text/javascript" src="../app/view/js/jquery.min.js"></script>
+    <!-- transform2d lib -->
+    <script type="text/javascript" src="../app/view/js/jquery.transform2d.js"></script>
+    <!-- jTinder lib -->
+    <script type="text/javascript" src="../app/view/js/jquery.jTinder.js"></script>
+    <!-- jTinder initialization script -->
+    <script type="text/javascript" src="../app/view/js/main.js"></script>
+</body>
+</html>
 
 //full like process
 /*
