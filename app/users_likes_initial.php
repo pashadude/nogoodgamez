@@ -98,4 +98,41 @@ for ($i = $page_start; $i <= $page_finished; $i++ ) {
 //巴莎
 
 
+
+//full like process
+/*
+$dm = DocumentManager::create($connection, $config);
+
+$user = new User();
+
+$updater = new UserUpdateController($user);
+$updater->updateInitialUser();
+
+$dm->persist($user);
+$dm->flush();
+
+//$user_id = $user->getId();
+//var_dump($user_id);
+
+$game = new Game();
+$game_name = "Madden NFL 15";
+
+$assessment = new Assessment();
+
+$liker = new AssessmentUpdateController($user_id, $game_name, $assessment);
+$liker->updateAssessment(1, $dm);
+
+$dm->persist($assessment);
+$dm->flush();
+*/
+
+
+
+
+//巴莎
+
+
+
+
+
 ?>

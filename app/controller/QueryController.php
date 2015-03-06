@@ -29,9 +29,11 @@ class QueryController{
         $results = $this->dm->createQueryBuilder(get_class($collection_elem))
             ->distinct($field)
             ->getQuery()
-            ->execute();
-        print_r($results);
-        return $results->elements;
+            ->execute()
+            ->toArray();
+            //->count();
+
+        return $results;
     }
 }
 

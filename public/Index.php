@@ -57,9 +57,10 @@ $current_ssid = session_id();
 $dm = DocumentManager::create($connection, $config);
 $user = new User();
 $query = new QueryController($dm);
-$responce = $query->findOneItem($user,'session',$current_ssid);
+$response = $query->findOneItem($user,'session',$current_ssid);
 
-if($responce === NULL){
+
+if($response === NULL){
     $updater = new UserUpdateController($user);
     $updater->updateRealUser($current_ssid);
     $dm->persist($user);
@@ -70,7 +71,7 @@ if($responce === NULL){
     echo $cont->generateView($dm);
     //launch view with random game
 } else {
-    $user = $query->findById($responce['_id'], $user);
+    $user = $query->findById($response['_id'], $user);
 
     //launch view with games recommended by prediction io
 }
@@ -100,38 +101,3 @@ if($responce === NULL){
     <script type="text/javascript" src="../app/view/js/main.js"></script>
 </body>
 </html>
-
-//full like process
-/*
-$dm = DocumentManager::create($connection, $config);
-
-$user = new User();
-
-$updater = new UserUpdateController($user);
-$updater->updateInitialUser();
-
-$dm->persist($user);
-$dm->flush();
-
-//$user_id = $user->getId();
-//var_dump($user_id);
-
-$game = new Game();
-$game_name = "Madden NFL 15";
-
-$assessment = new Assessment();
-
-$liker = new AssessmentUpdateController($user_id, $game_name, $assessment);
-$liker->updateAssessment(1, $dm);
-
-$dm->persist($assessment);
-$dm->flush();
-*/
-
-
-
-
-//巴莎
-
-
-?>

@@ -22,16 +22,19 @@ class NewUserViewController {
     public function __construct(Documents\User $user, Views\NewUserView $view) {
         $this->user = $user;
         $this->view = $view;
-        $this->game = new Documents\Game();
+
     }
 
     public function generateView (DocumentManager $dm){
         $query = new QueryController($dm);
-        $games = $query->giveDistinctValues($this->game, 'name');
+        $game = new Documents\Game();
+        $games = $query->giveDistinctValues($game, 'name');
         $k = rand(0,sizeof($games));
-        $game = $query->findOneItem($this->game,'name',$games[$k]);
-        $results['pic'] = $this->game->getPic();
-        $results['name'] = $this->game->getName();
+        $gq = $query->findOneItem($game,'name',$games[$k]);
+        $game = $query->findById($gq['_id'], $game);
+        $results['pic'] = $game->getPic();
+        $results['name'] = $game->getName();
+        //var_dump($results);
 
 
         return $this->view->giveIl($results);
