@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f16ec958-0b90-4765-b42b-c454bd0a4cd6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/view/NewUserView.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/ExistingUserViewController.php" afterPath="$PROJECT_DIR$/app/controller/ExistingUserViewController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Index.php" afterPath="$PROJECT_DIR$/public/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/NewUserView.php" afterPath="$PROJECT_DIR$/app/view/NewUserView.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/NewUserViewController.php" afterPath="$PROJECT_DIR$/app/controller/NewUserViewController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/QueryController.php" afterPath="$PROJECT_DIR$/app/controller/QueryController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/users_likes_initial.php" afterPath="$PROJECT_DIR$/app/users_likes_initial.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/view/js/main.js" afterPath="$PROJECT_DIR$/app/view/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nogoodgamez.iws" />
@@ -33,7 +33,7 @@
       <file leaf-file-name="NewUserViewController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/NewUserViewController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="28" selection-start="887" selection-end="887" vertical-scroll-proportion="-10.0" vertical-offset="270" max-vertical-offset="810">
+            <state line="26" column="25" selection-start="458" selection-end="1008" vertical-scroll-proportion="-5.6666665" vertical-offset="225" max-vertical-offset="792">
               <folding>
                 <element signature="e#120#134#0" expanded="true" />
               </folding>
@@ -41,73 +41,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Game.php">
+      <file leaf-file-name="ExistingUserViewController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controller/ExistingUserViewController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="81" selection-end="106" vertical-scroll-proportion="-0.0" vertical-offset="72" max-vertical-offset="1512">
-              <folding />
+            <state line="25" column="5" selection-start="622" selection-end="622" vertical-scroll-proportion="0.71146244" vertical-offset="0" max-vertical-offset="846">
+              <folding>
+                <element signature="e#120#134#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="79" selection-start="2572" selection-end="2572" vertical-scroll-proportion="2.4496644" vertical-offset="962" max-vertical-offset="1962">
-              <folding>
-                <element signature="e#132#164#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controller/QueryController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="8" selection-start="949" selection-end="949" vertical-scroll-proportion="-8.851851" vertical-offset="373" max-vertical-offset="810">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssessmentUpdateController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controller/AssessmentUpdateController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="53" selection-start="975" selection-end="1029" vertical-scroll-proportion="-8.0" vertical-offset="342" max-vertical-offset="900">
-              <folding>
-                <element signature="e#121#135#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="468">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewUserView.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/NewUserView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="-1.7037038" vertical-offset="116" max-vertical-offset="414">
-              <folding>
-                <marker date="1425670907886" expanded="true" signature="222:523" placeholder="..." />
-                <marker date="1425670907886" expanded="true" signature="222:385" placeholder="..." />
-                <marker date="1425670907886" expanded="true" signature="222:267" placeholder="..." />
-                <marker date="1425670907886" expanded="true" signature="222:261" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jTinder.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/view/css/jTinder.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.0" vertical-offset="3132" max-vertical-offset="3654">
+            <state line="16" column="25" selection-start="444" selection-end="444" vertical-scroll-proportion="19.481482" vertical-offset="814" max-vertical-offset="1998">
               <folding />
             </state>
           </provider>
@@ -116,7 +64,7 @@
       <file leaf-file-name="users_likes_initial.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/users_likes_initial.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="0" selection-start="3476" selection-end="3476" vertical-scroll-proportion="-11.518518" vertical-offset="1921" max-vertical-offset="2394">
+            <state line="78" column="20" selection-start="2722" selection-end="2837" vertical-scroll-proportion="-13.0" vertical-offset="873" max-vertical-offset="2394">
               <folding />
             </state>
           </provider>
@@ -141,10 +89,14 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/view/css/jTinder.css" />
         <option value="$PROJECT_DIR$/app/controller/QueryController.php" />
-        <option value="$PROJECT_DIR$/app/controller/NewUserViewController.php" />
-        <option value="$PROJECT_DIR$/app/view/NewUserView.php" />
-        <option value="$PROJECT_DIR$/public/Index.php" />
         <option value="$PROJECT_DIR$/app/users_likes_initial.php" />
+        <option value="$PROJECT_DIR$/public/Index.php" />
+        <option value="$PROJECT_DIR$/app/view/js/jquery.jTinder.js" />
+        <option value="$PROJECT_DIR$/app/view/js/main.js" />
+        <option value="$PROJECT_DIR$/app/view/NewUserView.php" />
+        <option value="$PROJECT_DIR$/app/controller/NewUserViewController.php" />
+        <option value="$PROJECT_DIR$/app/view/UserView.php" />
+        <option value="$PROJECT_DIR$/app/controller/ExistingUserViewController.php" />
       </list>
     </option>
   </component>
@@ -181,7 +133,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -197,6 +148,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,7 +239,47 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Hydrators" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,15 +303,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
+    <property name="options.lastSelected" value="web-ide.project.structure" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/view" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
@@ -346,6 +357,23 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f16ec958-0b90-4765-b42b-c454bd0a4cd6" name="Default" comment="" />
@@ -363,17 +391,17 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26435044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2960725" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31772575" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -398,6 +426,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="468" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/css/jTinder.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.0" vertical-offset="3132" max-vertical-offset="3654" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/users_likes_initial.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="0" selection-start="3476" selection-end="3476" vertical-scroll-proportion="0.0" vertical-offset="2412" max-vertical-offset="2574">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/NewUserViewController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="36" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="846">
@@ -409,60 +454,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="81" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1512">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="81" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1512" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="34" selection-start="1610" selection-end="1610" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2556">
-          <folding>
-            <element signature="e#132#164#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/QueryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="774">
-          <folding />
-        </state>
+        <state line="36" column="0" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="774" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/AssessmentUpdateController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="7" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="990">
-          <folding>
-            <element signature="e#121#135#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="10" column="7" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="468">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/NewUserView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="2" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="504">
-          <folding>
-            <marker date="1425670907886" expanded="true" signature="222:523" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:385" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:267" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:261" placeholder="..." />
-          </folding>
-        </state>
+        <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="468" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/css/jTinder.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.0" vertical-offset="3132" max-vertical-offset="3654">
-          <folding />
-        </state>
+        <state line="189" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.0" vertical-offset="3132" max-vertical-offset="3654" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/users_likes_initial.php">
@@ -483,9 +502,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="29" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="612">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="29" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="612" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/UserUpdateController.php">
@@ -502,21 +519,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="468">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/NewUserView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="130" selection-end="130" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="360">
-          <folding>
-            <marker date="1425670907886" expanded="true" signature="222:523" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:385" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:267" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:261" placeholder="..." />
-          </folding>
-        </state>
+        <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="468" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/users_likes_initial.php">
@@ -534,24 +537,18 @@
     <entry file="file://$PROJECT_DIR$/public/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="2" selection-start="1146" selection-end="1172" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="1242">
-          <folding>
-            <element signature="e#132#164#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Game.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="81" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1512">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="81" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1512" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="72" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1242">
-          <folding />
-        </state>
+        <state line="15" column="72" selection-start="328" selection-end="328" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1242" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/User.php">
@@ -561,25 +558,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/AssessmentUpdateController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="990">
-          <folding>
-            <element signature="e#121#135#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="35" column="0" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/QueryController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="34" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="630">
-          <folding />
-        </state>
+        <state line="23" column="34" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="468">
-          <folding />
-        </state>
+        <state line="9" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="468" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/users_likes_initial.php">
@@ -591,9 +580,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/gamez_update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="47" selection-start="2597" selection-end="2597" vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2052">
-          <folding />
-        </state>
+        <state line="83" column="47" selection-start="2597" selection-end="2597" vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2052" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/fetcher/helpers.php">
@@ -601,23 +588,9 @@
         <state line="153" column="17" selection-start="4963" selection-end="4963" vertical-scroll-proportion="0.0" vertical-offset="2646" max-vertical-offset="3240" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="72" selection-start="328" selection-end="328" vertical-scroll-proportion="-0.7058824" vertical-offset="486" max-vertical-offset="1242">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/ExistingUserViewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="333" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/gamez_update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="47" selection-start="2597" selection-end="2597" vertical-scroll-proportion="0.6467066" vertical-offset="1170" max-vertical-offset="1944">
-          <folding />
-        </state>
+        <state line="83" column="47" selection-start="2597" selection-end="2597" vertical-scroll-proportion="0.6467066" vertical-offset="1170" max-vertical-offset="1944" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/model/User.php">
@@ -625,34 +598,9 @@
         <state line="13" column="21" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="900" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="29" selection-end="43" vertical-scroll-proportion="-1.0" vertical-offset="9" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/UserUpdateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="191" selection-end="278" vertical-scroll-proportion="-8.0" vertical-offset="0" max-vertical-offset="558">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="4" selection-start="7" selection-end="8" vertical-scroll-proportion="0.036511157" vertical-offset="0" max-vertical-offset="594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/view/js/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="509">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="509" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/js/jquery.transform2d.js">
@@ -660,85 +608,102 @@
         <state line="8" column="58" selection-start="427" selection-end="427" vertical-scroll-proportion="-3.075" vertical-offset="1620" max-vertical-offset="10008" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/js/jquery.jTinder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="311" selection-end="311" vertical-scroll-proportion="0.375" vertical-offset="0" max-vertical-offset="3312">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="468">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/css/jTinder.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.0" vertical-offset="3132" max-vertical-offset="3654">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/QueryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="8" selection-start="949" selection-end="949" vertical-scroll-proportion="-8.851851" vertical-offset="373" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="81" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1512">
-          <folding />
-        </state>
+        <state line="14" column="33" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="468" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/AssessmentUpdateController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="53" selection-start="975" selection-end="1029" vertical-scroll-proportion="-8.0" vertical-offset="342" max-vertical-offset="900">
+        <state line="34" column="9" selection-start="965" selection-end="965" vertical-scroll-proportion="0.7528517" vertical-offset="288" max-vertical-offset="864" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="81" selection-end="106" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1512" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="29" selection-end="43" vertical-scroll-proportion="0.08681672" vertical-offset="9" max-vertical-offset="612" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/css/jTinder.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="0" selection-start="4466" selection-end="4466" vertical-scroll-proportion="0.79881656" vertical-offset="3132" max-vertical-offset="3654" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/QueryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="8" selection-start="949" selection-end="949" vertical-scroll-proportion="1.9678457" vertical-offset="0" max-vertical-offset="810" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/UserUpdateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="5" selection-start="496" selection-end="496" vertical-scroll-proportion="0.8" vertical-offset="0" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="72" selection-start="328" selection-end="328" vertical-scroll-proportion="-0.21818182" vertical-offset="378" max-vertical-offset="1242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/view/UserView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="6" selection-start="139" selection-end="139" vertical-scroll-proportion="0.25454545" vertical-offset="0" max-vertical-offset="495">
           <folding>
-            <element signature="e#121#135#0" expanded="true" />
+            <marker date="1425928542739" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425928542739" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/NewUserViewController.php">
+    <entry file="file://$PROJECT_DIR$/app/view/js/jquery.jTinder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="28" selection-start="887" selection-end="887" vertical-scroll-proportion="-10.0" vertical-offset="270" max-vertical-offset="810">
-          <folding>
-            <element signature="e#120#134#0" expanded="true" />
-          </folding>
+        <state line="79" column="10" selection-start="2139" selection-end="2139" vertical-scroll-proportion="2.5108056" vertical-offset="0" max-vertical-offset="3168">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/view/NewUserView.php">
+    <entry file="file://$PROJECT_DIR$/app/view/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="-1.7037038" vertical-offset="116" max-vertical-offset="414">
-          <folding>
-            <marker date="1425670907886" expanded="true" signature="222:523" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:385" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:267" placeholder="..." />
-            <marker date="1425670907886" expanded="true" signature="222:261" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/users_likes_initial.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="0" selection-start="3476" selection-end="3476" vertical-scroll-proportion="-11.518518" vertical-offset="1921" max-vertical-offset="2394">
+        <state line="8" column="54" selection-start="262" selection-end="262" vertical-scroll-proportion="0.26373628" vertical-offset="0" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="79" selection-start="2572" selection-end="2572" vertical-scroll-proportion="2.4496644" vertical-offset="962" max-vertical-offset="1962">
+        <state line="16" column="25" selection-start="444" selection-end="444" vertical-scroll-proportion="19.481482" vertical-offset="814" max-vertical-offset="1998">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/users_likes_initial.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="20" selection-start="2722" selection-end="2837" vertical-scroll-proportion="-13.0" vertical-offset="873" max-vertical-offset="2394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/NewUserViewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="25" selection-start="458" selection-end="1008" vertical-scroll-proportion="-5.6666665" vertical-offset="225" max-vertical-offset="792">
           <folding>
-            <element signature="e#132#164#0" expanded="true" />
+            <element signature="e#120#134#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/ExistingUserViewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="5" selection-start="622" selection-end="622" vertical-scroll-proportion="0.71146244" vertical-offset="0" max-vertical-offset="846">
+          <folding>
+            <element signature="e#120#134#0" expanded="true" />
           </folding>
         </state>
       </provider>

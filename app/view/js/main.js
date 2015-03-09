@@ -6,6 +6,7 @@ $("#tinderslide").jTinder({
     onDislike: function (item) {
 	    // set the status text
         $('#status').html('Dislike image ' + (item.index()+1));
+        //init view with 'pane'.(item.index()+2) class
     },
 	// like callback
     onLike: function (item) {

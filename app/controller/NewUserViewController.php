@@ -9,7 +9,6 @@
 namespace Controllers;
 use Documents;
 use Views;
-use Games;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Controllers\QueryController;
 
@@ -19,10 +18,9 @@ class NewUserViewController {
     private $view;
     private $game;
 
-    public function __construct(Documents\User $user, Views\NewUserView $view) {
+    public function __construct(Documents\User $user, Views\UserView $view) {
         $this->user = $user;
         $this->view = $view;
-
     }
 
     public function generateView (DocumentManager $dm){
@@ -34,6 +32,7 @@ class NewUserViewController {
         $game = $query->findById($gq['_id'], $game);
         $results['pic'] = $game->getPic();
         $results['name'] = $game->getName();
+        $results['pane'] = "pane1";
         //var_dump($results);
 
 
