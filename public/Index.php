@@ -13,13 +13,14 @@ use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 use Documents\Game;
 use Documents\User;
-use Documents\View;
+use Views\UserView;
 use Documents\Assessment;
 use Controllers\GameUpdateController;
 use Controllers\QueryController;
 use Controllers\AssessmentUpdateController;
 use Controllers\UserUpdateController;
-use Controllers\NewUserViewController;
+use Controllers\UserViewController;
+
 
 
 
@@ -60,6 +61,9 @@ $dm = DocumentManager::create($connection, $config);
 $user = new User();
 $query = new QueryController($dm);
 $response = $query->findOneItem($user,'session',$current_ssid);
+$view = new UserView();
+$game = new Game();
+$assmnt = new Assessment();
 
 
 if($response === NULL){
@@ -67,16 +71,14 @@ if($response === NULL){
     $updater->updateRealUser($current_ssid);
     $dm->persist($user);
     $dm->flush();
-
-    $view = new \Views\NewUserView();
-    $cont = new NewUserViewController($user, $view);
-    echo $cont->generateView($dm);
-    //launch view with random game
+    $cont = new UserViewController($user, $view, $game, $assmnt);
+    echo $cont->generateNewUserView($dm);
 } else {
-    $user = $query->findById($response['_id'], $user);
-
-    //launch view with games recommended by prediction io
+    $cont = new UserViewController($user, $view, $game, $assmnt);
+    echo $cont->generateExistingUserView($dm, "pane1");
 }
+
+
 ?>
 </ul>
         </div>
