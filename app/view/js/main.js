@@ -6,12 +6,25 @@ $("#tinderslide").jTinder({
     onDislike: function (item) {
 	    // set the status text
         $('#status').html('Dislike image ' + (item.index()+1));
+
         //init view with 'pane'.(item.index()+2) class
     },
 	// like callback
     onLike: function (item) {
 	    // set the status text
         $('#status').html('Like image ' + (item.index()+1));
+        $.ajax({
+            url: 'liker.php',
+            type: 'post',
+            data: {'action': 'like', 'gamename': $('#gamepane').innerHTML, 'pane': item.index()+1},
+            success: function(data, status) {
+                $('#gamelist').append(data);
+            },
+            error: function(xhr, desc, err) {
+                console.log(xhr);
+                console.log("Details: " + desc + "\nError:" + err);
+            }
+        });
     },
 	animationRevertSpeed: 200,
 	animationSpeed: 400,
