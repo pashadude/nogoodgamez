@@ -51,8 +51,9 @@ class UserViewController {
     public function generateExistingUserView(DocumentManager $dm, $pane){
         $query = new QueryController($dm);
         //run prediction.io function which gets $game_name, one of arguments should be $this->user
-        $game_name = 'Dead Space 2';//dummy game name 4 modelling this
-        $gq = $query->findOneItem($this->game,'name',$game_name);
+        $games = $query->giveDistinctValues($this->game, 'name');
+        $k = rand(0,sizeof($games));
+        $gq = $query->findOneItem($this->game,'name',$games[$k]);
         $game = $query->findById($gq['_id'], $this->game);
         $results['pic'] = $game->getPic();
         $results['name'] = $game->getName();

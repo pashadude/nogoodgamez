@@ -15,10 +15,11 @@ class UserView {
 
         $html = '<li class="%3$s">
                      <div class="img" style="background: url(\'%1$s\') no-repeat scroll center; background-size: cover;"></div>
-                     <div id="gamename">%2$s</div>
+                     <div id="game%3$s">%2$s</div>
                      <div class="like"></div>
                      <div class="dislike"></div>
                  </li>';
+       // print_r($html);
        return sprintf($html, $data['pic'], $data['name'], $data['pane']);
     }
 } 

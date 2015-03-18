@@ -54,11 +54,11 @@
 
 		showPane: function (index) {
 			panes.eq(current_pane).hide();
-			current_pane = index;
+			//current_pane = index;
 		},
 
 		next: function () {
-			return this.showPane(current_pane - 1);
+			return this.showPane(current_pane-1);
 		},
 
 		dislike: function() {
@@ -66,6 +66,10 @@
 				if($that.settings.onDislike) {
 					$that.settings.onDislike(panes.eq(current_pane));
 				}
+                current_pane = current_pane + 1;
+
+
+
 				$that.next();
 			});
 		},
@@ -75,6 +79,9 @@
 				if($that.settings.onLike) {
 					$that.settings.onLike(panes.eq(current_pane));
 				}
+
+
+
 				$that.next();
 			});
 		},

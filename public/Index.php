@@ -51,7 +51,7 @@ session_start();
 <div class="wrap">
     <!-- start jtinder container -->
     <div id="tinderslide">
-        <ul class="gamelist">
+        <ul id="gamelist">
 <?php
 
 
@@ -73,10 +73,10 @@ if($response === NULL){
     $dm->flush();
     $cont = new UserViewController($user, $view, $game, $assmnt);
     echo $cont->generateNewUserView($dm);
-}
+} else {
     $cont = new UserViewController($user, $view, $game, $assmnt);
     echo $cont->generateExistingUserView($dm, "pane1");
-
+}
 
 
 ?>
