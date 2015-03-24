@@ -3,16 +3,15 @@
  */
 $("#tinderslide").jTinder({
 	// dislike callback
-    onDislike: function (item) {
-	    // set the status text
-        var gamenumber = $("#gamelist li").length;
-        var gamepane ='#'+'gamepane'+(gamenumber - 1);
+    onDislike: function () {
 
-        $('#status').html('Dislike game ' +  $(gamepane.toString()).text());
+        var gamenumber = $("#gamelist li").length;
+        var gamename = $.trim($("#gamelist li:last").text());
+
         $.ajax({
-            url: 'liker.php',
+            url: 'liker.php',//abs path
             type: 'post',
-            data: {'action': 'dislike', 'gamename': $(gamepane.toString()).text(), 'pane': gamenumber},
+            data: {'action': 'dislike', 'gamename':gamename, 'pane': gamenumber},
             success: function(data, status) {
                 $('#gamelist').append(data);
             },
@@ -25,18 +24,15 @@ $("#tinderslide").jTinder({
         //init view with 'pane'.(item.index()+2) class
     },
 	// like callback
-    onLike: function (item) {
-	    // set the status text
+    onLike: function () {
+
         var gamenumber = $("#gamelist li").length;
-        var gamepane ='#'+'gamepane'+(gamenumber - 1);
-
-
-        $('#status').html('Like game ' +  $(gamepane.toString()).text() );
+        var gamename = $.trim($("#gamelist li:last").text());
 
         $.ajax({
             url: 'liker.php',
             type: 'post',
-            data: {'action': 'like', 'gamename': $(gamepane.toString()).text(), 'pane': gamenumber},
+            data: {'action': 'like', 'gamename': gamename, 'pane': gamenumber},
             success: function(data, status) {
                 $('#gamelist').append(data);
             },

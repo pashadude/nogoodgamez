@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: proveyourskillz
@@ -27,24 +28,24 @@ $connection = new Connection();
 
 
 $config = new Configuration();
-$config->setProxyDir(__DIR__ . '/Proxies');
+$config->setProxyDir(ROOT.DS.'app/Proxies');
 $config->setProxyNamespace('Proxies');
-$config->setHydratorDir(__DIR__ . '/Hydrators');
+$config->setHydratorDir(ROOT.DS.'app/Hydrators');
 $config->setHydratorNamespace('Hydrators');
 $config->setDefaultDB('nogoodgames');
 $config->setMetadataDriverImpl(AnnotationDriver::create(ROOT . DS .'app/model'));
 
 AnnotationDriver::registerAnnotationClasses();
 
-//$current_ssid = session_id();
-$current_ssid = "k1b6387tqka91rk6u3dii6ve20";
+$current_ssid = session_id();
+//$current_ssid = "k1b6387tqka91rk6u3dii6ve20";
 $dm = DocumentManager::create($connection, $config);
 $user = new User();
 $game = new Game();
 $view = new UserView();
 $query = new QueryController($dm);
 
-$game_query = $query->findOneItem($game,'name','Dead Space 2'/*$input['gamename']*/);
+$game_query = $query->findOneItem($game,'name',$input['gamename']);
 $game = $query->findById($game_query['_id'], $game);
 //var_dump($game);
 

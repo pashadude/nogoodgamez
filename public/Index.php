@@ -27,9 +27,9 @@ use Controllers\UserViewController;
 $connection = new Connection();
 
 $config = new Configuration();
-$config->setProxyDir(__DIR__ . '/Proxies');
+$config->setProxyDir(ROOT.DS.'app/Proxies');
 $config->setProxyNamespace('Proxies');
-$config->setHydratorDir(__DIR__ . '/Hydrators');
+$config->setHydratorDir(ROOT.DS.'app/Hydrators');
 $config->setHydratorNamespace('Hydrators');
 $config->setDefaultDB('nogoodgames');
 $config->setMetadataDriverImpl(AnnotationDriver::create(ROOT . DS .'app/model'));
@@ -39,21 +39,33 @@ AnnotationDriver::registerAnnotationClasses();
 session_start();
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<link rel="stylesheet" type="text/css" href="../app/view/css/jTinder.css">
-<head>
-    <title>NoGoodGamez</title>
-</head>
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
 
+<head>
+    <title>NoGoodGamez - let ai recommend you PS3/PS4 games you would like</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="UTF-8">
+
+</head>
+<!-- This website is built using prediction.io, doctrine mongo odm, Jtinder, pls see my github for sc-->
 <body>
-<!-- start padding container -->
+
+
+
+
 <div class="wrap">
-    <!-- start jtinder container -->
+    <header>
+        <hgroup>
+            <h1>NoGoodGamez</h1>
+            <h2>let ai recommend you PS3/PS4 games you would like</h2>
+        </hgroup>
+        <p class="Byline">just press the like/dislike buttons below</p>
+    </header>
+
     <div id="tinderslide">
         <ul id="gamelist">
 <?php
-
 
 $current_ssid = session_id();
 
@@ -82,26 +94,52 @@ if($response === NULL){
 ?>
 </ul>
         </div>
-        <!-- end jtinder container -->
     </div>
-    <!-- end padding container -->
-
-    <!-- jTinder trigger by buttons  -->
+<div>
     <div class="actions">
-        <a href="#" class="dislike"><i></i></a>
-        <a href="#" class="like"><i></i></a>
+        <a href="#" class="dislike"><i>&#x025CB</i></a>
+        <a href="#" class="like"><i>&#10799</i></a>
     </div>
 
-    <!-- jTinder status text  -->
-    <div id="status"></div>
 
-    <!-- jQuery lib -->
-    <script type="text/javascript" src="../app/view/js/jquery.min.js"></script>
-    <!-- transform2d lib -->
-    <script type="text/javascript" src="../app/view/js/jquery.transform2d.js"></script>
-    <!-- jTinder lib -->
-    <script type="text/javascript" src="../app/view/js/jquery.jTinder.js"></script>
-    <!-- jTinder initialization script -->
-    <script type="text/javascript" src="../app/view/js/main.js"></script>
+    <div id="FatFooter">
+
+        <aside>
+            <div class="LeftFloatBox">
+                <img src="img/PredictionIO-logo.png">
+            </div>
+
+            <div class="LeftFloatBox">
+                Built with Prediction.io technology
+            </div>
+        </aside>
+        <aside>
+
+            <div class="RightFloatBox">
+                <img src="img/gamespot.png">
+            </div>
+
+            <div class="RightFloatBox">
+                Built using gamespot data
+            </div>
+        </aside>
+        <footer>
+            <p>Created by pashadude a.k.a. パシャ尺八
+                &nbsp; &bull; &nbsp; Copyright © 2015
+                &nbsp; &bull; &nbsp;
+
+            </p>
+        </footer>
+    </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.transform2d.js"></script>
+    <script type="text/javascript" src="js/jquery.jTinder.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551068b619c7f381" async="async"></script>
+
 </body>
 </html>
