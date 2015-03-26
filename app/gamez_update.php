@@ -47,7 +47,7 @@ $gamedata = array();
 $csv = new parseCSV();
 $csv1 = new parseCSV();
 
-$csv->auto(ROOT.DS.'data/psn_gamez.csv');
+$csv->auto(ROOT.DS.'data/psn_gamez_new.csv');
 $csv1->auto(ROOT.DS.'data/gmz.csv');
 
 

@@ -6,7 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'predictionio\\' => array($vendorDir . '/predictionio/predictionio/src/predictionio'),
     'Views\\' => array($baseDir . '/app/view'),
+    'React\\Promise\\' => array($vendorDir . '/react/promise/src'),
+    'GuzzleHttp\\Stream\\' => array($vendorDir . '/guzzlehttp/streams/src'),
+    'GuzzleHttp\\Ring\\' => array($vendorDir . '/guzzlehttp/ringphp/src'),
+    'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Fetcher\\' => array($baseDir . '/app/fetcher'),
     'Documents\\' => array($baseDir . '/app/model'),
     'Controllers\\' => array($baseDir . '/app/controller'),

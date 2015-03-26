@@ -14,6 +14,7 @@
             "Documents\\": "app/model/",
             "Controllers\\": "app/controller/",
             "Views\\": "app/view/"
+
         },
         
         "files": ["app/fetcher/helpers.php"]

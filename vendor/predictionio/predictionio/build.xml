@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="predictionio" default="install-dependencies">
+
+  <target name="install-dependencies">
+    <if>
+      <available file="composer.phar" />
+      <then>
+        <echo>Composer is installed</echo>
+      </then>
+      <else>
+        <echo message="Installing composer" />
+        <exec command="curl -s http://getcomposer.org/installer | php" passthru="true" />
+        <exec command="php composer.phar install --dev" passthru="true" />
+      </else>
+    </if>
+  </target>
+
+  <target name="clean-dependencies">
+    <delete dir="${project.basedir}/vendor"/>
+    <delete file="composer.lock" />
+  </target>
+
+  <target name="update-dependencies">
+    <exec command="php composer.phar update --dev" passthru="true" />
+  </target>
+
+  <target name="apigen">
+    <exec command="apigen -s src -d docs --title 'PredictionIO API PHP Client'" passthru="true" />
+  </target>
+
+</project>
