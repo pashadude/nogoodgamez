@@ -3,12 +3,13 @@ html, body {
     padding: 0;
     margin: 0;
     position: relative;
-    background: url("../img/pspic.png");
+    background: url("../img/cntrllr.png");
     overflow: auto;
 }
 
 aside,footer, header, hgroup {
     display: block;
+    background-color: #a22df6;
 }
 
 header {
@@ -178,7 +179,7 @@ a:hover {
     width: 304px;
     margin: 0 auto;
     overflow: hidden;
-    padding-top: 17%;
+    padding-top: 14%;
 }
 
 .actions div {
@@ -193,10 +194,11 @@ a:hover {
     height: 60px;
     font-family : helvetica, arial, sans-serif;
     padding-bottom: 20%;
+    font-style: normal;
 }
 
 .actions a.like i {
-    color: #20B2AA;
+    color: #1928b2;
     font-size: 4em;
 }
 
@@ -243,10 +245,10 @@ a:hover {
     height: 64px;
     width: 100%;
     font: 1.6em helvetica,arial,sans-serif, strong;
-    background: #C53FF6;
+    background: #a22df6;
     border-top: thin solid black;
     font-size: small;
-    color: #333366;
+    color: #ededed;
 
 }
 
@@ -270,5 +272,6 @@ a:hover {
 }
 footer p {
     text-align: center;
+    color: aqua;
 
 }

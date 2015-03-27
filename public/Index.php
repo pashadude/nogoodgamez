@@ -95,13 +95,24 @@ if($response === NULL){
 </ul>
         </div>
     </div>
-<div>
+<
     <div class="actions">
         <a href="#" class="dislike"><i>&#x025CB</i></a>
-        <a href="#" class="like"><i>&#10799</i></a>
+        <a href="#" class="like"><i>&#x2715</i></a>
     </div>
 
-
+    <div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- isnogood -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-2595161812671986"
+             data-ad-slot="6327134752"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
     <div id="FatFooter">
 
         <aside>
@@ -123,6 +134,7 @@ if($response === NULL){
                 Built using gamespot data
             </div>
         </aside>
+
         <footer>
             <p>Created by pashadude a.k.a. パシャ尺八
                 &nbsp; &bull; &nbsp; Copyright © 2015
@@ -131,7 +143,7 @@ if($response === NULL){
             </p>
         </footer>
     </div>
-    </div>
+
 
 
     <script type="text/javascript" src="js/jquery.min.js"></script>

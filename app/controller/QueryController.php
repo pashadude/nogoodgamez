@@ -35,6 +35,12 @@ class QueryController{
 
         return $results;
     }
+
+    public function findByRef($field_name, $target_elem, $elem){
+        $qb = $this->dm->createQueryBuilder(get_class($target_elem))
+            ->field($field_name)->references($elem);
+        return $qb;
+    }
 }
 
 
