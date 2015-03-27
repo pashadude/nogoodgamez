@@ -7,39 +7,64 @@ html, body {
     overflow: auto;
 }
 
-aside,footer, header, hgroup {
+@font-face {
+    font-family: 'Clio Ultra Black Italic';
+    src: url('../fonts/Clio_Ultra_Black_Italic-webfont.eot');
+}
+
+@font-face {
+    font-family: 'Clio Bold';
+    src: url('../fonts/Clio_Bold-webfont.eot');
+}
+
+@font-face {
+    font-family: 'Clio Regular';
+    src: url('../fonts/Clio_Regular-webfont.eot');
+}
+
+
+
+aside,footer {
     display: block;
-    background-color: #a22df6;
+    background-color:#a22df6
 }
 
-header {
-    padding: 5px;
-    margin: 5px;
+header{
+    background-color: #000000;
     text-align: center;
+    padding-top: 1%;
 }
 
+#liker {
+    color: #1928b2;
+}
 
+#disliker{
+    color: #FF00FF;
+}
 header h1 {
-    font-family: helvetica, arial, sans-serif;
-    text-shadow: 3px 3px 4px #990066;
-    font-size: 2em;
+    font-family: "Clio Bold";
+    text-shadow: 4px 4px 5px #990066;
+    font-size: 4em;
     color: #FFF;
+    padding: 0px;
+    margin: 0px;
 }
 
 header h2 {
     margin: 0px;
-    font-family: helvetica, arial, sans-serif;
+    font-family: "Clio Regular";
     font-weight: bold;
-    font-size: medium;
+    font-size: 1.5 em;
     color: aqua;
 }
 
 header .Byline {
-    font-family: helvetica, arial, sans-serif;
+    font-family: "Clio Ultra Black Italic";
     font-style: italic;
-    font-size: small;
+    font-size: 0.9;
     margin: 0px;
-    color: #f7f7f7;
+    color: blueviolet;
 }
 
 
@@ -179,7 +204,6 @@ a:hover {
     width: 304px;
     margin: 0 auto;
     overflow: hidden;
-    padding-top: 14%;
 }
 
 .actions div {

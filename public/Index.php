@@ -52,16 +52,16 @@ session_start();
 <body>
 
 
-
+<header>
+    <hgroup>
+        <h1>NoGoodGamez</h1>
+        <h2>let ai recommend you PS3/PS4 games based on games you've liked before</h2>
+    </hgroup>
+    <p class="Byline">press like <strong id="liker">&#x2715</strong> or dislike <strong id="disliker">&#x025CB</strong> buttons below to assess the game</p>
+</header>
 
 <div class="wrap">
-    <header>
-        <hgroup>
-            <h1>NoGoodGamez</h1>
-            <h2>let ai recommend you PS3/PS4 games you would like</h2>
-        </hgroup>
-        <p class="Byline">just press the like/dislike buttons below</p>
-    </header>
+
 
     <div id="tinderslide">
         <ul id="gamelist">
