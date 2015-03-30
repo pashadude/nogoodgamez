@@ -9,6 +9,7 @@ use Doctrine\ODM\MongoDB\Configuration;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
 use Documents\Game;
+use Documents\User;
 use Controllers\QueryController;
 use Controllers\PredictionController;
 
@@ -38,11 +39,11 @@ $query = new QueryController($dm);
 
 $game = new Game();
 $gamez = $query->giveDistinctValues($game, 'name');
-var_dump($gamez);
+//var_dump($gamez);
 
-$prophet = new PredictionController('j4jIdbq59JsF2f4CXwwkIiVHNFnyNvWXqMqXxcIbQDqFRz5K0fe9e3QfqjKwvW3O"',
+/*$prophet = new PredictionController('j4jIdbq59JsF2f4CXwwkIiVHNFnyNvWXqMqXxcIbQDqFRz5K0fe9e3QfqjKwvW3O"',
     'http://localhost:7070',
-    'http://localhost:8000');
+    'http://localhost:8000');*/
 
 
 foreach ($gamez as $gamename) {
@@ -51,9 +52,20 @@ foreach ($gamez as $gamename) {
      $gm = $query->findById($gq['_id'], $game);
      $id = $gm->getId();
      $genres = $gm->getGenres();
-     $prophet->set_item($id, $genres);
-    //var_dump($gq);
+     //$prophet->set_item($id, $genres);
+     var_dump($id);
+     var_dump($genres);
 }
+
+$user = new User();
+$users = $query->giveDistinctValues($user, '_id');
+
+foreach ($users as $userid){
+    $id = $userid->{'$id'};
+    var_dump ($id);
+   //$prophet->set_user($id);
+}
+
 
 
 ?>
