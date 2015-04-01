@@ -20,12 +20,16 @@ class UserViewController {
     private $view;
     private $game;
     private $assmnt;
+    private $prophet;
 
-    public function __construct(Documents\User $user, Views\UserView $view, Documents\Game $game, Documents\Assessment $assmnt) {
+
+    public function __construct(Documents\User $user, Views\UserView $view, Documents\Game $game, Documents\Assessment $assmnt/*, PredictionController $prophet*/) {
         $this->user = $user;
         $this->view = $view;
         $this->game = $game;
         $this->assmnt = $assmnt;
+        //$this->prophet = $prophet;
+
     }
 
     public function processLike(DocumentManager $dm, $like){
@@ -33,7 +37,11 @@ class UserViewController {
         $liker->updateAssessment($like, $dm);
         $dm->persist($this->assmnt);
         $dm->flush();
-        // enter prediction-io update 0HTssOzKaJu7WTkj - token
+
+
+        $id = $this->user->getId();
+        $item_id =$this->game->getId();
+        //$this->prophet->set_like($id, $item_id);
     }
 
     public function generateNewUserView(DocumentManager $dm, $pane = 'pane1'){
@@ -50,11 +58,33 @@ class UserViewController {
 
     public function generateExistingUserView(DocumentManager $dm, $pane){
         $query = new QueryController($dm);
-        //run prediction.io function which gets $game_name, one of arguments should be $this->user
+
+        /*
+        $likes = array();
+        $dislikes = array();
+        $user_id = $this->user->getId();
+        $q_support = $query->findOneItem($this->user,'_id',$user_id);
+        $user_id_obj = $q_support['_id'];
+        $aq = $query->findAllItems( $this->assmnt, 'user.$id', $user_id_obj);
+        foreach($aq as $a){
+            $item_id = $a['_id']->{'$id'};
+            if($a['like'] == true){
+                $likes[] = $item_id;
+            } else {
+                $dislikes[] = $item_id;
+            }
+        }
+        $gameid = $this->prophet->retrieve_prediction($likes, $dislikes);
+        */
+
+
         $games = $query->giveDistinctValues($this->game, 'name');
         $k = rand(0,sizeof($games));
         $gq = $query->findOneItem($this->game,'name',$games[$k]);
-        $game = $query->findById($gq['_id'], $this->game);
+        $gameid = $gq['_id'];
+
+
+        $game = $query->findById($gameid, $this->game);
         $results['pic'] = $game->getPic();
         $results['name'] = $game->getName();
         $results['pane'] = $pane;

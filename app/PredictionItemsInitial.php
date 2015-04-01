@@ -41,9 +41,9 @@ $game = new Game();
 $gamez = $query->giveDistinctValues($game, 'name');
 //var_dump($gamez);
 
-/*$prophet = new PredictionController('j4jIdbq59JsF2f4CXwwkIiVHNFnyNvWXqMqXxcIbQDqFRz5K0fe9e3QfqjKwvW3O"',
+$prophet = new PredictionController('j4jIdbq59JsF2f4CXwwkIiVHNFnyNvWXqMqXxcIbQDqFRz5K0fe9e3QfqjKwvW3O"',
     'http://localhost:7070',
-    'http://localhost:8000');*/
+    'http://localhost:8000');
 
 
 foreach ($gamez as $gamename) {
@@ -52,18 +52,35 @@ foreach ($gamez as $gamename) {
      $gm = $query->findById($gq['_id'], $game);
      $id = $gm->getId();
      $genres = $gm->getGenres();
-     //$prophet->set_item($id, $genres);
-     var_dump($id);
-     var_dump($genres);
+     $prophet->set_item($id, $genres);
+     //var_dump($id);
+     //var_dump($genres);
 }
 
 $user = new User();
 $users = $query->giveDistinctValues($user, '_id');
+//var_dump($users);
+$assmnt = new \Documents\Assessment();
 
+/*
+$exmpl1 = $query->findOneItem($user,'_id','54f6e5c9ec59cfc9178b544d');
+var_dump($exmpl1['_id']);
+$exmpl = $query->findById($exmpl1['_id'],$user);
+var_dump($exmpl);
+
+*/
 foreach ($users as $userid){
     $id = $userid->{'$id'};
-    var_dump ($id);
-   //$prophet->set_user($id);
+    //var_dump ($id);
+    $prophet->set_user($id);
+    $aq = $query->findAllItems($assmnt,'user.$id',$userid);
+    foreach ($aq as $a){
+        if($a['like'] == true){
+            $item_id = $a['_id']->{'$id'};
+            //var_dump($item_id);
+            $prophet->set_like($id, $item_id);
+        }
+    }
 }
 
 

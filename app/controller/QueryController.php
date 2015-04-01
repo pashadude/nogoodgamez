@@ -21,6 +21,17 @@ class QueryController{
         return $result;
     }
 
+    public function findAllItems($collection_elem, $field, $value){
+        $result = $this->dm->createQueryBuilder(get_class($collection_elem))
+            ->field($field)->equals($value)
+            ->hydrate(false)
+            ->getQuery()
+            ->execute()
+            ->toArray();
+        return $result;
+    }
+
+
     public function findById($id, $collection_elem) {
         return $this->dm->find(get_class($collection_elem), $id);
     }
@@ -36,11 +47,8 @@ class QueryController{
         return $results;
     }
 
-    public function findByRef($field_name, $target_elem, $elem){
-        $qb = $this->dm->createQueryBuilder(get_class($target_elem))
-            ->field($field_name)->references($elem);
-        return $qb;
-    }
+
+
 }
 
 

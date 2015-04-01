@@ -121,7 +121,7 @@ if($response === NULL){
             </div>
 
             <div class="LeftFloatBox">
-                Built with Prediction.io technology
+                Built with <a href="http://prediction.io">Prediction.io</a> technology
             </div>
         </aside>
         <aside>
@@ -131,7 +131,7 @@ if($response === NULL){
             </div>
 
             <div class="RightFloatBox">
-                Built using gamespot data
+                Built using <a href="http://gamespot.com">gamespot</a> data
             </div>
         </aside>
 

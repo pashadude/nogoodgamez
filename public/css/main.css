@@ -55,14 +55,14 @@ header h2 {
     margin: 0px;
     font-family: "Clio Regular";
     font-weight: bold;
-    font-size: 1.5 em;
+    font-size: 1.6em;
     color: aqua;
 }
 
 header .Byline {
     font-family: "Clio Ultra Black Italic";
     font-style: italic;
-    font-size: 0.9;
+    font-size: 1em;
     margin: 0px;
     color: blueviolet;
 }
@@ -280,19 +280,19 @@ a:hover {
 #FatFooter div.LeftFloatBox {
     float: left;
     padding: 10px;
-    width: 60px;
+    width: 80px;
 
 }
 
 #FatFooter div.RightFloatBox{
     float: right;
     padding: 10px;
-    width: 60px;
+    width: 80px;
 
 }
 
 #FatFooter div img {
-    width: 60px;
+    width: 80px;
 }
 footer p {
     text-align: center;
