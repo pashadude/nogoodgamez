@@ -20,6 +20,7 @@ use Controllers\QueryController;
 use Controllers\AssessmentUpdateController;
 use Controllers\UserUpdateController;
 use Controllers\UserViewController;
+use Controllers\PredictionController;
 
 
 
@@ -69,6 +70,10 @@ session_start();
 
 $current_ssid = session_id();
 
+$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
+    'http://localhost:7070',
+    'http://localhost:8000');
+
 $dm = DocumentManager::create($connection, $config);
 $user = new User();
 $query = new QueryController($dm);
@@ -83,10 +88,10 @@ if($response === NULL){
     $updater->updateRealUser($current_ssid);
     $dm->persist($user);
     $dm->flush();
-    $cont = new UserViewController($user, $view, $game, $assmnt);
+    $cont = new UserViewController($user, $view, $game, $assmnt, $prophet);
     echo $cont->generateNewUserView($dm);
 } else {
-    $cont = new UserViewController($user, $view, $game, $assmnt);
+    $cont = new UserViewController($user, $view, $game, $assmnt, $prophet);
     echo $cont->generateExistingUserView($dm, "pane1");
 }
 

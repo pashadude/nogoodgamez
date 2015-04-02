@@ -21,6 +21,7 @@ use Views\UserView;
 use Documents\Assessment;
 use Controllers\QueryController;
 use Controllers\UserViewController;
+use Controllers\PredictionController;
 
 
 $input=$_POST;
@@ -45,6 +46,10 @@ $game = new Game();
 $view = new UserView();
 $query = new QueryController($dm);
 
+$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
+    'http://localhost:7070',
+    'http://localhost:8000');
+
 $game_query = $query->findOneItem($game,'name',$input['gamename']);
 $game = $query->findById($game_query['_id'], $game);
 //var_dump($game);
@@ -54,7 +59,7 @@ $user = $query->findById($user_query['_id'], $user);
 //var_dump($user_query);
 
 $assmnt = new Assessment();
-$cont = new UserViewController($user, $view, $game, $assmnt);
+$cont = new UserViewController($user, $view, $game, $assmnt, $prophet);
 
 if($input['action'] == 'like') {
     $cont->processLike($dm, TRUE);

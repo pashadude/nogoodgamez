@@ -25,15 +25,18 @@ class PredictionController {
     }
 
     public function set_like($user_id, $item_id){
-        $this->client->recordUserActionOnItem('like', $user_id, $item_id);
+        $result = $this->client->recordUserActionOnItem('like', $user_id, $item_id);
+        print_r($result);
     }
 
     public function set_user($id){
-        $this->client->setUser($id);
+        $result = $this->client->setUser($id);
+        print_r($result);
     }
 
     public function set_item($item_id, $types){
-        $this->client->setItem($item_id, array('itypes'=>$types));
+        $result = $this->client->setItem($item_id, array('itypes'=>$types));
+        print_r($result);
     }
 
     public function retrieve_prediction($like_ids, $dislike_ids){

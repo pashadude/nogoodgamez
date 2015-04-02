@@ -23,12 +23,12 @@ class UserViewController {
     private $prophet;
 
 
-    public function __construct(Documents\User $user, Views\UserView $view, Documents\Game $game, Documents\Assessment $assmnt/*, PredictionController $prophet*/) {
+    public function __construct(Documents\User $user, Views\UserView $view, Documents\Game $game, Documents\Assessment $assmnt, PredictionController $prophet) {
         $this->user = $user;
         $this->view = $view;
         $this->game = $game;
         $this->assmnt = $assmnt;
-        //$this->prophet = $prophet;
+        $this->prophet = $prophet;
 
     }
 
@@ -59,7 +59,7 @@ class UserViewController {
     public function generateExistingUserView(DocumentManager $dm, $pane){
         $query = new QueryController($dm);
 
-        /*
+
         $likes = array();
         $dislikes = array();
         $user_id = $this->user->getId();
@@ -75,13 +75,13 @@ class UserViewController {
             }
         }
         $gameid = $this->prophet->retrieve_prediction($likes, $dislikes);
-        */
 
 
+/*
         $games = $query->giveDistinctValues($this->game, 'name');
         $k = rand(0,sizeof($games));
         $gq = $query->findOneItem($this->game,'name',$games[$k]);
-        $gameid = $gq['_id'];
+        $gameid = $gq['_id'];*/
 
 
         $game = $query->findById($gameid, $this->game);

@@ -41,7 +41,7 @@ $game = new Game();
 $gamez = $query->giveDistinctValues($game, 'name');
 //var_dump($gamez);
 
-$prophet = new PredictionController('j4jIdbq59JsF2f4CXwwkIiVHNFnyNvWXqMqXxcIbQDqFRz5K0fe9e3QfqjKwvW3O"',
+$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
     'http://localhost:7070',
     'http://localhost:8000');
 
@@ -66,9 +66,9 @@ $assmnt = new \Documents\Assessment();
 $exmpl1 = $query->findOneItem($user,'_id','54f6e5c9ec59cfc9178b544d');
 var_dump($exmpl1['_id']);
 $exmpl = $query->findById($exmpl1['_id'],$user);
-var_dump($exmpl);
+var_dump($exmpl);*/
 
-*/
+
 foreach ($users as $userid){
     $id = $userid->{'$id'};
     //var_dump ($id);
