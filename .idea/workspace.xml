@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f16ec958-0b90-4765-b42b-c454bd0a4cd6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/mongodb/mongod.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/mongodb/nogoodgames.0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/mongodb/nogoodgames.ns" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/build.sbt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/data/import_eventserver.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/data/send_query.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/engine.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/project/assembly.sbt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/project/pio-build.sbt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/src/main/scala/ALSAlgorithm.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/src/main/scala/DataSource.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/src/main/scala/Engine.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/src/main/scala/Preparator.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/src/main/scala/Serving.scala" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/prediction/nogoodgamezEng/template.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" afterPath="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/electrolinux/phpquery" afterPath="$PROJECT_DIR$/vendor/electrolinux/phpquery" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Hydrators/DocumentsGameHydrator.php" afterPath="$PROJECT_DIR$/app/Hydrators/DocumentsGameHydrator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/PredictionController.php" afterPath="$PROJECT_DIR$/app/controller/PredictionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PredictionItemsInitial.php" afterPath="$PROJECT_DIR$/app/PredictionItemsInitial.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/UserViewController.php" afterPath="$PROJECT_DIR$/app/controller/UserViewController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nogoodgamez.iws" />
@@ -59,7 +38,7 @@
       <file leaf-file-name="UserViewController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controller/UserViewController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.09375" vertical-offset="162" max-vertical-offset="1692">
+            <state vertical-scroll-proportion="3.1132076" vertical-offset="162" max-vertical-offset="1692">
               <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
               <folding>
                 <element signature="e#120#134#0#PHP" expanded="true" />
@@ -378,7 +357,13 @@
       <option name="project" value="LOCAL" />
       <updated>1427898394030</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed prediction-training bugs">
+      <created>1428092007222</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1428092007222</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -405,6 +390,7 @@
     <frame x="-1" y="28" width="1368" height="708" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32582322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275563" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -413,7 +399,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25226587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39688042" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32582322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3269565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32582322" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -422,7 +408,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -469,7 +454,8 @@
     <MESSAGE value="added user update to prediction engine updater&#10;put the updater into demonstration mode" />
     <MESSAGE value="added user and like/dislike update to prediction engine updater&#10;put the updater into demonstration mode&#10;added prediction retriever to UserViewController&#10;QuerryController : removed refrence-based querris, added findAllItems based on any field" />
     <MESSAGE value="added assesment hydrators" />
-    <option name="LAST_COMMIT_MESSAGE" value="added assesment hydrators" />
+    <MESSAGE value="fixed prediction-training bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed prediction-training bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -821,7 +807,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/UserViewController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.09375" vertical-offset="162" max-vertical-offset="1692">
+        <state vertical-scroll-proportion="3.1132076" vertical-offset="162" max-vertical-offset="1692">
           <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
           <folding>
             <element signature="e#120#134#0#PHP" expanded="true" />
