@@ -67,7 +67,7 @@ class UserViewController {
         $user_id_obj = $q_support['_id'];
         $aq = $query->findAllItems( $this->assmnt, 'user.$id', $user_id_obj);
         foreach($aq as $a){
-            $item_id = $a['_id']->{'$id'};
+            $item_id = $a['game']['$id']->{'$id'};
             if($a['like'] == true){
                 $likes[] = $item_id;
             } else {

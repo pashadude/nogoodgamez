@@ -31,12 +31,12 @@ class PredictionController {
 
     public function set_user($id){
         $result = $this->client->setUser($id);
-        print_r($result);
+        //print_r($result);
     }
 
     public function set_item($item_id, $types){
         $result = $this->client->setItem($item_id, array('itypes'=>$types));
-        print_r($result);
+        //print_r($result);
     }
 
     public function retrieve_prediction($like_ids, $dislike_ids){

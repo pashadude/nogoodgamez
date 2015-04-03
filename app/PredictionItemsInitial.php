@@ -41,9 +41,11 @@ $game = new Game();
 $gamez = $query->giveDistinctValues($game, 'name');
 //var_dump($gamez);
 
+
 $prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
-    'http://localhost:7070',
-    'http://localhost:8000');
+    'localhost:7070',
+    'localhost:8000');
+
 
 
 foreach ($gamez as $gamename) {
@@ -76,8 +78,10 @@ foreach ($users as $userid){
     $aq = $query->findAllItems($assmnt,'user.$id',$userid);
     foreach ($aq as $a){
         if($a['like'] == true){
-            $item_id = $a['_id']->{'$id'};
-            //var_dump($item_id);
+            //var_dump($a['game']['$id']->{'$id'});
+            $item_id = $a['game']['$id']->{'$id'};
+            //echo($item_id.":".$id);
+            //var_dump ($id);
             $prophet->set_like($id, $item_id);
         }
     }
