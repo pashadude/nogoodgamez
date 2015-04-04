@@ -59,6 +59,7 @@ foreach ($gamez as $gamename) {
 
      $input = $gm->getPic();
      $ftype = substr($input, -3);
+     if($ftype = "peg"){$ftype  = substr($input, -4);}
      $output = '../public/img/games/'.$id.".".$ftype;
      file_put_contents($output, file_get_contents($input));
      $gm->setPic($output);

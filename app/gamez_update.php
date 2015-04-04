@@ -84,6 +84,22 @@ foreach ($csv->data as $gamelist_data){
                $updater->updateGame($gamedata);
                $dm->persist($game);
                $dm->flush();
+
+               $gq = $finder->findOneItem($game, 'name', $gamedata['name']);
+               $gm = $finder->findById($gq['_id'], $game);
+               $id = $gm->getId();
+               $input = $gm->getPic();
+               $ftype = substr($input, -3);
+               if($ftype = "peg"){$ftype  = substr($input, -4);}
+               $output = '../public/img/games/'.$id.".".$ftype;
+               file_put_contents($output, file_get_contents($input));
+               $gm->setPic($output);
+               $dm->persist($game);
+               $dm->flush();
+               var_dump($gm);
+
+
+
            } else {
                echo $gamedata['name']."is already in the database";
            }
