@@ -49,14 +49,21 @@ $prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq12
 
 
 foreach ($gamez as $gamename) {
+     $game = new Game();
      $gamegenres = array();
      $gq = $query->findOneItem($game, 'name', $gamename);
      $gm = $query->findById($gq['_id'], $game);
      $id = $gm->getId();
      $genres = $gm->getGenres();
      $prophet->set_item($id, $genres);
-     //var_dump($id);
-     //var_dump($genres);
+
+     $input = $gm->getPic();
+     $ftype = substr($input, -3);
+     $output = '../public/img/games/'.$id.".".$ftype;
+     file_put_contents($output, file_get_contents($input));
+     $gm->setPic($output);
+     $dm->persist($game);
+     $dm->flush();
 }
 
 $user = new User();
