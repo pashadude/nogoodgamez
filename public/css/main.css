@@ -1,0 +1,301 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background: url("../img/cntrllr.png");
+    overflow: auto;
+}
+
+@font-face {
+    font-family: 'Clio Ultra Black Italic';
+    src: url('../fonts/Clio_Ultra_Black_Italic-webfont.eot');
+}
+
+@font-face {
+    font-family: 'Clio Bold';
+    src: url('../fonts/Clio_Bold-webfont.eot');
+}
+
+@font-face {
+    font-family: 'Clio Regular';
+    src: url('../fonts/Clio_Regular-webfont.eot');
+}
+
+
+
+aside,footer {
+    display: block;
+    background-color:#a22df6
+}
+
+header{
+    background-color: #000000;
+    text-align: center;
+    padding-top: 1%;
+}
+
+#liker {
+    color: #1928b2;
+}
+
+#disliker{
+    color: #FF00FF;
+}
+header h1 {
+    font-family: "Clio Bold";
+    text-shadow: 4px 4px 5px #990066;
+    font-size: 4em;
+    color: #FFF;
+    padding: 0px;
+    margin: 0px;
+}
+
+header h2 {
+    margin: 0px;
+    font-family: "Clio Regular";
+    font-weight: bold;
+    font-size: 1.6em;
+    color: aqua;
+}
+
+header .Byline {
+    font-family: "Clio Ultra Black Italic";
+    font-style: italic;
+    font-size: 1em;
+    margin: 0px;
+    color: blueviolet;
+}
+
+
+
+/* Wrapper with padding */
+.wrap  {
+    height: 360px;
+    width: 350px;
+    padding: 1%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+
+}
+
+
+p {
+    padding: 0 0 1em;
+    color: #666;
+    font: 1em/1.6em helvetica,arial,sans-serif;
+}
+.wrapper a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #0bf;
+}
+a:hover {
+    color: #0bf;
+}
+
+
+#tinderslide {
+    position: relative;
+    background: #fff;
+    width: 95%;
+    height: 100%;
+}
+
+#tinderslide ul {
+    margin: 0;
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+#tinderslide li {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    left: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    background: #eee;
+    font-size: 24px;
+    color: #000;
+    border: 1px solid #fff;
+    border: 1px solid #dfdfdf;
+    border: 1px solid rgba(96, 96, 96, 0.2);
+    -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    transform: translate3d(0%,0,0) scale3d(1,1,1);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Image text */
+#tinderslide li h2 {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, .2);
+}
+
+
+
+#tinderslide .like,
+#tinderslide .dislike {
+
+    opacity: 0;
+    height: 80px;
+    position: absolute;
+    width: 170px;
+    left: 45px;
+    top:40px;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#tinderslide .dislike {
+    right: 45px;
+    left: auto;
+
+}
+
+
+/* Image container */
+#tinderslide .img {
+    height: 90%;
+    width: 100%;
+
+    margin-bottom: 5px;
+    position: relative;
+    -webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    -o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+    transform: translate3d(0%,0,0) scale3d(1,1,1);
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+    -webkit-transform-style: preserve-3d;
+}
+
+/* Action - buttons */
+.actions {
+    text-align: center;
+    width: 304px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.actions div {
+    position: relative;
+    display: inline-block;
+    margin-right: -4px;
+}
+
+.actions a i {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-family : helvetica, arial, sans-serif;
+    padding-bottom: 20%;
+    font-style: normal;
+}
+
+.actions a.like i {
+    color: #1928b2;
+    font-size: 4em;
+}
+
+.actions a.dislike i {
+    color: #FF00FF;
+    font-size: 6em;
+}
+
+.actions a.like{
+    line-height: 78px;
+}
+
+.actions a.dislike{
+    line-height: 64px;
+}
+
+
+
+.actions a {
+    float: left;
+    display: block;
+    background-color: #f7f7f7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+    background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+    background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+    color: #a7a7a7;
+    margin: 36px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    text-align: center;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+}
+
+
+
+#FatFooter {
+
+    bottom: 0px;
+    height: 64px;
+    width: 100%;
+    font: 1.6em helvetica,arial,sans-serif, strong;
+    background: #a22df6;
+    border-top: thin solid black;
+    font-size: small;
+    color: #ededed;
+
+}
+
+
+#FatFooter div.LeftFloatBox {
+    float: left;
+    padding: 10px;
+    width: 80px;
+
+}
+
+#FatFooter div.RightFloatBox{
+    float: right;
+    padding: 10px;
+    width: 80px;
+
+}
+
+#FatFooter div img {
+    width: 80px;
+}
+footer p {
+    text-align: center;
+    color: aqua;
+
+}
