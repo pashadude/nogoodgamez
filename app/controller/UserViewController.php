@@ -63,6 +63,9 @@ class UserViewController {
         //var_dump($user_id_obj);
         //$assmntz = $query->giveDistinctValues($this->assmnt, 'user');
         //var_dump ($assmntz);
+        $games = $query->giveDistinctValues($this->game, 'name');
+        $k = rand(0,sizeof($games));
+        $gq = $query->findOneItem($this->game,'name',$games[$k]);
         $aq = $query->findAllItems( $this->assmnt, 'user.$id', $user_id_obj);
         //var_dump($aq);
         foreach($aq as $a){
@@ -76,13 +79,16 @@ class UserViewController {
         //var_dump($likes);
         if ($likes!=array()){
             $gameid = $this->prophet->retrieve_prediction($likes, $dislikes);
+            //var_dump($gameid);
+            if(!is_string($gameid)){
+               $gameid = $gq['_id'];
+            } elseif(strlen($gameid)!=24) {
+               $gameid = $gq['_id'];
+            }
         } else {
-            $games = $query->giveDistinctValues($this->game, 'name');
-            $k = rand(0,sizeof($games));
-            $gq = $query->findOneItem($this->game,'name',$games[$k]);
             $gameid = $gq['_id'];
         }
-
+        //var_dump($gameid);
 
         $game = $query->findById($gameid, $this->game);
         $results['pic'] = $game->getPic();
