@@ -106,18 +106,7 @@ if($response === NULL){
         <a href="#" class="like"><i>&#x2715</i></a>
     </div>
 
-    <div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- isnogood -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2595161812671986"
-             data-ad-slot="6327134752"
-             data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    </div>
+
     <div id="FatFooter">
 
         <aside>
@@ -149,23 +138,6 @@ if($response === NULL){
         </footer>
     </div>
 
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-45088416-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.transform2d.js"></script>
-    <script type="text/javascript" src="js/jquery.jTinder.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-551068b619c7f381" async="async"></script>
 
 </body>
 </html>
