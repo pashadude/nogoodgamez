@@ -18,14 +18,14 @@ machine learning - based game recommender
     val viewEventsRDD: RDD[ViewEvent] = eventsDb.find(
       appId = dsp.appId,
       entityType = Some("user"),
-      eventNames = Some(List("like")),
+      eventNames = Some(List("like")),//MODIFIED HERE
       // targetEntityType is optional field of an event.
       targetEntityType = Some(Some("item")))(sc)
       // eventsDb.find() returns RDD[Event]
       .map { event =>
         val viewEvent = try {
           event.event match {
-            case "like" => ViewEvent(
+            case "like" => ViewEvent(// AND HERE
               user = event.entityId,
               item = event.targetEntityId.get,
               t = event.eventTime.getMillis)
