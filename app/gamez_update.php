@@ -84,7 +84,8 @@ foreach ($csv->data as $gamelist_data){
                $updater->updateGame($gamedata);
                $dm->persist($game);
                $dm->flush();
-
+//if you would like to save pictures on your server
+/*
 	       $gq = $finder->findOneItem($game, 'name', $gamedata['name']);
                $gm = $finder->findById($gq['_id'], $game);
                $id = $gm->getId();
@@ -98,7 +99,7 @@ foreach ($csv->data as $gamelist_data){
                $dm->flush();
                var_dump($gm);
 
-
+*/
 
            } else {
                echo $gamedata['name']."is already in the database";
