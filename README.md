@@ -12,25 +12,20 @@ machine learning - based game recommender
   
   c. run the [updater - /app/gamez_update.php](https://github.com/pashadude/nogoodgamez/blob/master/app/gamez_update.php)
 
-2. Before working with PredictionIO do not forget to modify `readTraining()` in DataSource.scala at you PredictionIO server for accepting likes
+2. Before working with PredictionIO do not forget to modify `readTraining()` in [DataSource.scala](https://github.com/pashadude/nogoodgamez/blob/master/prediction/nogoodgamezEng/src/main/scala/DataSource.scala) at you PredictionIO server for accepting likes
 
 ```scala
- override
-  def readTraining(sc: SparkContext): TrainingData = {
-
-    ...
-
     val viewEventsRDD: RDD[ViewEvent] = eventsDb.find(
       appId = dsp.appId,
       entityType = Some("user"),
-      eventNames = Some(List("like")), // MODIFIED
+      eventNames = Some(List("like")),
       // targetEntityType is optional field of an event.
       targetEntityType = Some(Some("item")))(sc)
       // eventsDb.find() returns RDD[Event]
       .map { event =>
         val viewEvent = try {
           event.event match {
-            case "like" => ViewEvent( // MODIFIED
+            case "like" => ViewEvent(
               user = event.entityId,
               item = event.targetEntityId.get,
               t = event.eventTime.getMillis)
@@ -44,11 +39,8 @@ machine learning - based game recommender
           }
         }
         viewEvent
-      }
+      }.cache()
 
-    ...
-  }
-}
 ```
 
 
