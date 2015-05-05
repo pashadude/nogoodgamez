@@ -43,9 +43,15 @@
             $(element).bind('touchend mouseup', this.handler);
         },
 
+        bindNew: function(element){
+            panes = $(">ul>li", element);
+            pane_count = panes.length;
+            current_pane = panes.length - 1;
+        },
+
         showPane: function (index) {
             panes.eq(current_pane).hide();
-            //current_pane = index;
+            current_pane = index;
         },
 
         next: function () {
@@ -154,12 +160,13 @@
     };
 
     $.fn[ pluginName ] = function (options) {
+
         this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName, new Plugin(this, options));
             }
-            else if ($.isFunction(Plugin.prototype[options])) {
-                $.data(this, 'plugin_' + pluginName)[options]();
+            else {
+                $.data(this, "plugin_" + pluginName).bindNew(this);
             }
         });
 

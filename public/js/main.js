@@ -20,6 +20,7 @@ $("#tinderslide").jTinder({
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
+        $("#tinderslide").jTinder(options);
 
         //init view with 'pane'.(item.index()+2) class
     },
@@ -41,6 +42,7 @@ $("#tinderslide").jTinder({
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
+        $("#tinderslide").jTinder(options);
     },
 	animationRevertSpeed: 200,
 	animationSpeed: 400,

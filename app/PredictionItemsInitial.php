@@ -42,9 +42,9 @@ $gamez = $query->giveDistinctValues($game, 'name');
 //var_dump($gamez);
 
 
-$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
-    'localhost:7070',
-    'localhost:8000');
+$prophet = new PredictionController(KEY,
+    'http://'.ML_SERVER_ADR.':7070',
+    'http://'.ML_SERVER_ADR.':8000');
 
 
 

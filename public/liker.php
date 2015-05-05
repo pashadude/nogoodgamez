@@ -46,9 +46,9 @@ $game = new Game();
 $view = new UserView();
 $query = new QueryController($dm);
 
-$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
-    'http://localhost:7070',
-    'http://localhost:8000');
+$prophet = new PredictionController(KEY,
+    'http://'.ML_SERVER_ADR.':7070',
+    'http://'.ML_SERVER_ADR.':8000');
 
 $game_query = $query->findOneItem($game,'name',$input['gamename']);
 $game = $query->findById($game_query['_id'], $game);
