@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f16ec958-0b90-4765-b42b-c454bd0a4cd6" name="Default" comment="">
+    <list default="true" id="f16ec958-0b90-4765-b42b-c454bd0a4cd6" name="Default" comment="Prediction server administration centralised&#10;&#10;&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" afterPath="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/electrolinux/phpquery" afterPath="$PROJECT_DIR$/vendor/electrolinux/phpquery" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PredictionItemsInitial.php" afterPath="$PROJECT_DIR$/app/PredictionItemsInitial.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/gamez_update.php" afterPath="$PROJECT_DIR$/app/gamez_update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/psn_gamez_new.csv" afterPath="$PROJECT_DIR$/data/psn_gamez_new.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <list id="0d0ed584-6747-45d1-9349-b4406569c9ac" name="Rejected commit: Default" comment="Prediction server administration centralised&#10;&#10;&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Index.php" afterPath="$PROJECT_DIR$/public/Index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/PredictionController.php" afterPath="$PROJECT_DIR$/app/controller/PredictionController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PredictionItemsInitial.php" afterPath="$PROJECT_DIR$/app/PredictionItemsInitial.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/UserViewController.php" afterPath="$PROJECT_DIR$/app/controller/UserViewController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/gamez_update.php" afterPath="$PROJECT_DIR$/app/gamez_update.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/liker.php" afterPath="$PROJECT_DIR$/public/liker.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/psn_gamez_new.csv" afterPath="$PROJECT_DIR$/data/psn_gamez_new.csv" />
     </list>
     <ignored path="nogoodgamez.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <file path="$PROJECT_DIR$/app/controller/UserViewController.php" ignored="false" />
+    <file path="$PROJECT_DIR$/app/PredictionItemsInitial.php" ignored="false" />
+    <file path="$PROJECT_DIR$/app/controller/PredictionController.php" ignored="false" />
+    <file path="$PROJECT_DIR$/app/gamez_update.php" ignored="false" />
+    <file path="$PROJECT_DIR$/data/psn_gamez_new.csv" ignored="false" />
+    <file path="$PROJECT_DIR$/public/liker.php" ignored="false" />
+    <file path="$PROJECT_DIR$/public/Index.php" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,34 +54,81 @@
       <file leaf-file-name="UserViewController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controller/UserViewController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.666667" vertical-offset="810" max-vertical-offset="1692">
-              <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+            <state vertical-scroll-proportion="24.148148" vertical-offset="1570" max-vertical-offset="1818">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="e#120#134#0#PHP" expanded="true" />
+                <marker date="1430844743364" expanded="true" signature="781:782" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jquery.jTinder.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/jquery.jTinder.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="3150">
+              <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="1134">
+              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.518518" vertical-offset="1174" max-vertical-offset="3024">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.369863" vertical-offset="1890" max-vertical-offset="3060">
+              <caret line="111" column="94" selection-start-line="111" selection-start-column="94" selection-end-line="111" selection-end-column="94" />
               <folding>
                 <element signature="e#186#218#0#PHP" expanded="true" />
+                <marker date="1430844743364" expanded="true" signature="2861:2980" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="2991:3424" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3146:3315" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3167:3180" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3332:3413" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3449:4220" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3466:3741" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3505:3578" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3618:3724" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3757:4015" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3798:3862" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="3903:3998" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="4033:4209" placeholder="..." />
+                <marker date="1430844743364" expanded="true" signature="4049:4191" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PredictionItemsInitial.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PredictionItemsInitial.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/PredictionItemsInitial.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5135135" vertical-offset="675" max-vertical-offset="1890">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.0" vertical-offset="540" max-vertical-offset="1728">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
                 <element signature="e#130#162#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="liker.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/liker.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.740741" vertical-offset="700" max-vertical-offset="1530">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+              <folding>
+                <element signature="e#239#271#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +137,8 @@
       <file leaf-file-name="gamez_update.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/gamez_update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.333333" vertical-offset="1197" max-vertical-offset="2232">
-              <caret line="94" column="69" selection-start-line="94" selection-start-column="69" selection-end-line="94" selection-end-column="69" />
+            <state vertical-scroll-proportion="6.0" vertical-offset="1512" max-vertical-offset="2268">
+              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,7 +147,7 @@
       <file leaf-file-name="Assessment.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.0" vertical-offset="540" max-vertical-offset="1242">
+            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1242">
               <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
               <folding />
             </state>
@@ -124,13 +184,13 @@
         <option value="$PROJECT_DIR$/app/users_likes_initial.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/app/controller/QueryController.php" />
-        <option value="$PROJECT_DIR$/public/Index.php" />
-        <option value="$PROJECT_DIR$/public/liker.php" />
-        <option value="$PROJECT_DIR$/app/controller/PredictionController.php" />
         <option value="$PROJECT_DIR$/app/controller/UserViewController.php" />
-        <option value="$PROJECT_DIR$/app/PredictionItemsInitial.php" />
         <option value="$PROJECT_DIR$/data/psn_gamez_new.csv" />
         <option value="$PROJECT_DIR$/app/gamez_update.php" />
+        <option value="$PROJECT_DIR$/app/controller/PredictionController.php" />
+        <option value="$PROJECT_DIR$/public/liker.php" />
+        <option value="$PROJECT_DIR$/app/PredictionItemsInitial.php" />
+        <option value="$PROJECT_DIR$/public/Index.php" />
       </list>
     </option>
   </component>
@@ -216,6 +276,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nogoodgamez" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -239,42 +317,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="games" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nogoodgamez" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nogoodgamez" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nogoodgamez" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nogoodgamez" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,7 +394,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.gamez_update.php">
+  <component name="RunManager" selected="PHP Script.Index.php">
     <configuration default="false" name="Index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/public/Index.php">
       <RunnerSettings RunnerId="PhpRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
@@ -389,6 +431,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -396,9 +441,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="false" name="PredictionItemsInitial.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/app/PredictionItemsInitial.php">
@@ -417,8 +459,8 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="PHP Script.gamez_update.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHP Script.Index.php" />
+        <item index="0" class="java.lang.String" itemvalue="PHP Script.Index.php" />
+        <item index="1" class="java.lang.String" itemvalue="PHP Script.gamez_update.php" />
         <item index="2" class="java.lang.String" itemvalue="PHP Script.users_likes_initial.php" />
         <item index="3" class="java.lang.String" itemvalue="PHP Script.liker.php" />
       </list>
@@ -484,26 +526,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="708" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32582322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275563" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2560423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25981873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39688042" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32582322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.03652174" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32582322" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869565" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -527,9 +569,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23489426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32582322" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -551,7 +593,8 @@
     <MESSAGE value="added user and like/dislike update to prediction engine updater&#10;put the updater into demonstration mode&#10;added prediction retriever to UserViewController&#10;QuerryController : removed refrence-based querris, added findAllItems based on any field" />
     <MESSAGE value="added assesment hydrators" />
     <MESSAGE value="fixed prediction-training bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed prediction-training bugs" />
+    <MESSAGE value="Prediction server administration centralised&#10;&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Prediction server administration centralised&#10;&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -566,6 +609,7 @@
           <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
           <folding>
             <element signature="e#120#134#0#PHP" expanded="true" />
+            <marker date="1430844743364" expanded="true" signature="781:782" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -586,6 +630,20 @@
           <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#186#218#0#PHP" expanded="true" />
+            <marker date="1430844743364" expanded="true" signature="2861:2980" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="2991:3424" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3146:3315" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3167:3180" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3332:3413" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3449:4220" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3466:3741" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3505:3578" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3618:3724" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3757:4015" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3798:3862" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3903:3998" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="4033:4209" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="4049:4191" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -614,6 +672,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#120#134#0#PHP" expanded="true" />
+            <marker date="1430844743364" expanded="true" signature="781:782" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -634,6 +693,20 @@
           <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#186#218#0#PHP" expanded="true" />
+            <marker date="1430844743364" expanded="true" signature="2861:2980" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="2991:3424" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3146:3315" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3167:3180" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3332:3413" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3449:4220" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3466:3741" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3505:3578" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3618:3724" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3757:4015" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3798:3862" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3903:3998" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="4033:4209" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="4049:4191" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -775,20 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery.transform2d.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.657944" vertical-offset="1566" max-vertical-offset="10008">
-          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Hydrators/DocumentsUserHydrator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
@@ -800,20 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.496063" vertical-offset="0" max-vertical-offset="508">
           <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8540146" vertical-offset="0" max-vertical-offset="1134">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery.jTinder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.81120944" vertical-offset="1121" max-vertical-offset="3150">
-          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -873,28 +918,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/PredictionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7027027" vertical-offset="216" max-vertical-offset="936">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/GameUpdateController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06909789" vertical-offset="0" max-vertical-offset="612">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.518518" vertical-offset="1174" max-vertical-offset="3024">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#186#218#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -906,31 +934,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/liker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7027027" vertical-offset="810" max-vertical-offset="1548">
-          <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-          <folding>
-            <element signature="e#239#271#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Assessment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.0" vertical-offset="540" max-vertical-offset="1242">
+        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1242">
           <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controller/UserViewController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667" vertical-offset="810" max-vertical-offset="1692">
-          <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
-          <folding>
-            <element signature="e#120#134#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -945,20 +953,107 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.transform2d.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.793713" vertical-offset="1566" max-vertical-offset="10008">
+          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/UserViewController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="24.148148" vertical-offset="1570" max-vertical-offset="1818">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#120#134#0#PHP" expanded="true" />
+            <marker date="1430844743364" expanded="true" signature="781:782" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/jquery.jTinder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="203" max-vertical-offset="3150">
+          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="1134">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controller/PredictionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4698795" vertical-offset="378" max-vertical-offset="1134">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#121#150#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/gamez_update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.333333" vertical-offset="1197" max-vertical-offset="2232">
-          <caret line="94" column="69" selection-start-line="94" selection-start-column="69" selection-end-line="94" selection-end-column="69" />
+        <state vertical-scroll-proportion="6.0" vertical-offset="1512" max-vertical-offset="2268">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/PredictionItemsInitial.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5135135" vertical-offset="675" max-vertical-offset="1890">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.0" vertical-offset="540" max-vertical-offset="1728">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
           <folding>
             <element signature="e#130#162#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/liker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.740741" vertical-offset="700" max-vertical-offset="1530">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="e#239#271#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.369863" vertical-offset="1890" max-vertical-offset="3060">
+          <caret line="111" column="94" selection-start-line="111" selection-start-column="94" selection-end-line="111" selection-end-column="94" />
+          <folding>
+            <element signature="e#186#218#0#PHP" expanded="true" />
+            <marker date="1430844743364" expanded="true" signature="2861:2980" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="2991:3424" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3146:3315" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3167:3180" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3332:3413" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3449:4220" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3466:3741" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3505:3578" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3618:3724" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3757:4015" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3798:3862" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="3903:3998" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="4033:4209" placeholder="..." />
+            <marker date="1430844743364" expanded="true" signature="4049:4191" placeholder="..." />
           </folding>
         </state>
       </provider>
