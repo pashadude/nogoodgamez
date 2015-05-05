@@ -22,6 +22,8 @@ use Controllers\UserUpdateController;
 use Controllers\UserViewController;
 use Controllers\PredictionController;
 
+define("KEY", "i9Cdde75L4q7ToM5L2vurkVp1uqZg20NXGHC8Hu8rNQijozvPuBh1ndTcNhdmH54");
+define("ML_SERVER_ADR", "localhost");
 
 
 
@@ -70,9 +72,9 @@ session_start();
 
 $current_ssid = session_id();
 
-$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
-    'http://localhost:7070',
-    'http://localhost:8000');
+$prophet = new PredictionController(KEY,
+    'http://'.ML_SERVER_ADR.':7070',
+    'http://'.ML_SERVER_ADR.':8000');
 
 $dm = DocumentManager::create($connection, $config);
 $user = new User();
