@@ -13,16 +13,16 @@ $("#tinderslide").jTinder({
             type: 'post',
             data: {'action': 'dislike', 'gamename':gamename, 'pane': gamenumber},
             success: function(data, status) {
-                $('#gamelist').append(data);
+                $('#gamelist').prepend(data);
             },
             error: function(xhr, desc, err) {
                 console.log(xhr);
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
-        $("#tinderslide").jTinder(options);
 
-        //init view with 'pane'.(item.index()+2) class
+
+
     },
 	// like callback
     onLike: function () {
@@ -35,20 +35,21 @@ $("#tinderslide").jTinder({
             type: 'post',
             data: {'action': 'like', 'gamename': gamename, 'pane': gamenumber},
             success: function(data, status) {
-                $('#gamelist').append(data);
+                $('#gamelist').prepend(data);
             },
             error: function(xhr, desc, err) {
                 console.log(xhr);
                 console.log("Details: " + desc + "\nError:" + err);
             }
         });
-        $("#tinderslide").jTinder(options);
+
     },
 	animationRevertSpeed: 200,
 	animationSpeed: 400,
-	threshold: 35,
+	threshold: 1,
 	likeSelector: '.like',
-	dislikeSelector: '.dislike'
+	dislikeSelector: '.dislike',
+    refreshOnNext: true
 });
 
 /**

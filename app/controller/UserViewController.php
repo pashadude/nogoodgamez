@@ -44,7 +44,7 @@ class UserViewController {
         //$this->prophet->set_like($id, $item_id);
     }
 
-    public function generateNewUserView(DocumentManager $dm, $pane = 'pane1'){
+    public function generateNewUserView(DocumentManager $dm){
         $query = new QueryController($dm);
         $games = $query->giveDistinctValues($this->game, 'name');
         $k = rand(0,sizeof($games));
@@ -52,14 +52,22 @@ class UserViewController {
         $game = $query->findById($gq['_id'], $this->game);
         $results['pic'] = $game->getPic();
         $results['name'] = $game->getName();
-        $results['pane'] = $pane;
-        return $this->view->giveIl($results);
+        $results['pane'] = 'pane1';
+        $part1 = $this->view->giveIl($results);
+        do {
+            $n = rand(0,sizeof($games));
+        } while(in_array($n, array($k)));
+        $gq = $query->findOneItem($this->game,'name',$games[$n]);
+        $game = $query->findById($gq['_id'], $this->game);
+        $results['pic'] = $game->getPic();
+        $results['name'] = $game->getName();
+        $results['pane'] = 'pane2';
+        $part2 = $this->view->giveIl($results);
+        return $part1."<br>".$part2;
     }
 
     public function generateExistingUserView(DocumentManager $dm, $pane){
         $query = new QueryController($dm);
-
-
         $likes = array();
         $dislikes = array();
         $user_id = $this->user->getId();

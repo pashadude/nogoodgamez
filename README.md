@@ -47,24 +47,19 @@ machine learning - based game recommender
 3.Set data at pio server with [PredictionItemsInitial.php](https://github.com/pashadude/nogoodgamez/blob/master/app/PredictionItemsInitial.php)
 
 
-4.I used modified jtinder for desktop you can use original for mobile version [jTinder](https://github.com/do-web/jTinder)
+4.I used [modified jtinder](https://github.com/likewinter/jTinder) for dynamic image load you can use the original version [jTinder](https://github.com/do-web/jTinder)
 
 
 5.You should update your prediction server addresses 
 
 ```php
-$prophet = new PredictionController('your key',
-    'http://your adress:7070',
-    'http://your adress:8000');
+define("KEY", "your_key");
+define("ML_SERVER_ADR", "your_server");
 ```
 
-at index.php, liker.php and [PredictionItemsInitial.php](https://github.com/pashadude/nogoodgamez/blob/master/app/PredictionItemsInitial.php) or simply put it to __construct at [PredictionController](https://github.com/pashadude/nogoodgamez/blob/master/app/controller/PredictionController.php)
 
 
-
-
-
-Thank you!
+Thank you! 
 
 
 

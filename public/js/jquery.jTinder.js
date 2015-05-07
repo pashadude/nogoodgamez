@@ -1,3 +1,12 @@
+/*
+ * jTinder v.1.0.0
+ * https://github.com/do-web/jTinder
+ * Requires jQuery 1.7+, jQuery transform2d
+ *
+ * Copyright (c) 2014, Dominik Weber
+ * Licensed under GPL Version 2.
+ * https://github.com/do-web/jTinder/blob/master/LICENSE
+ */
 ;(function ($, window, document, undefined) {
     var pluginName = "jTinder",
         defaults = {
@@ -7,7 +16,10 @@
             animationSpeed: 400,
             threshold: 1,
             likeSelector: '.like',
-            dislikeSelector: '.dislike'
+            dislikeSelector: '.dislike',
+            refreshOnNext: false,
+            cleanUp: true,
+            cleanUpItems: 10
         };
 
     var container = null;
@@ -43,18 +55,34 @@
             $(element).bind('touchend mouseup', this.handler);
         },
 
-        bindNew: function(element){
-            panes = $(">ul>li", element);
-            pane_count = panes.length;
-            current_pane = panes.length - 1;
-        },
-
         showPane: function (index) {
             panes.eq(current_pane).hide();
             current_pane = index;
         },
 
+        refreshPanes: function() {
+            panes = $('li', container);
+            if (panes.length !== pane_count) {
+                pane_count = panes.length;
+                ++current_pane;
+            }
+        },
+
+        cleanUp: function() {
+            var hiddenPanes = $('li:hidden', container);
+            if (hiddenPanes.length > this.settings.cleanUpItems) {
+                hiddenPanes.remove();
+            }
+        },
+
         next: function () {
+            if (this.settings.cleanUp) {
+                this.cleanUp();
+            }
+            if (this.settings.refreshOnNext) {
+                this.refreshPanes();
+            }
+
             return this.showPane(current_pane - 1);
         },
 
@@ -160,13 +188,12 @@
     };
 
     $.fn[ pluginName ] = function (options) {
-
         this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName, new Plugin(this, options));
             }
-            else {
-                $.data(this, "plugin_" + pluginName).bindNew(this);
+            else if ($.isFunction(Plugin.prototype[options])) {
+                $.data(this, 'plugin_' + pluginName)[options]();
             }
         });
 
