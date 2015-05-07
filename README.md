@@ -59,7 +59,7 @@ define("ML_SERVER_ADR", "your_server");
 
 
 
-Thank you! 
+Thank you!
 
 
 
