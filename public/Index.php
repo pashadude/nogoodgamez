@@ -102,7 +102,7 @@ if($response === NULL){
 </ul>
         </div>
     </div>
-<
+
     <div class="actions">
         <a href="#" class="dislike"><i>&#x025CB</i></a>
         <a href="#" class="like"><i>&#x2715</i></a>

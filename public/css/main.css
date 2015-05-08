@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     margin: 0;
     position: relative;
+    z-index: initial;
     background: url("../img/cntrllr.png");
     overflow: auto;
 }
@@ -77,6 +78,7 @@ header .Byline {
     margin: 0 auto;
     text-align: center;
     position: relative;
+    z-index: inherit;
 
 }
 
@@ -86,12 +88,6 @@ p {
     color: #666;
     font: 1em/1.6em helvetica,arial,sans-serif;
 }
-.wrapper a {
-    color: #000;
-    text-decoration: none;
-    border-bottom: 2px solid #0bf;
-}
-
 
 
 #tinderslide {
@@ -119,7 +115,7 @@ p {
     z-index: 2;
     left: 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    overflow: hidden;
+
     text-align: center;
     padding: 10px 10px 10px 10px;
     background: #eee;
@@ -209,7 +205,7 @@ p {
     overflow: hidden;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+   /* -webkit-transform: translate3d(0,0,0) scale3d(1,1,1);*/
     -webkit-transform-style: preserve-3d;
 
 
