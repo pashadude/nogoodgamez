@@ -10,7 +10,9 @@ machine learning - based game recommender
   b. as we take gamedata from gamespot there might be some url-related issues not covered by function `make_gamespot_urlname` at [/app/fetcher/helpers.php](https://github.com/pashadude/nogoodgamez/blob/master/app/fetcher/helpers.php), so add those exceptions to [/data/gmz.csv](https://github.com/pashadude/nogoodgamez/blob/master/data/gmz.csv)
   
   
-  c. run the [updater - /app/gamez_update.php](https://github.com/pashadude/nogoodgamez/blob/master/app/gamez_update.php)
+  c. run the [retriever - /app/gamez_retrieve.php](https://github.com/pashadude/nogoodgamez/blob/master/app/gamez_retrieve.php)
+
+  d. for updating games based on new gamespot reviews use the [updater - /app/gamez_update.php](https://github.com/pashadude/nogoodgamez/blob/master/app/gamez_update.php)
 
 2. Before working with PredictionIO do not forget to modify `readTraining()` in [DataSource.scala](https://github.com/pashadude/nogoodgamez/blob/master/prediction/nogoodgamezEng/src/main/scala/DataSource.scala) at you PredictionIO server for accepting likes
 

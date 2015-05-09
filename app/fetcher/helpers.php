@@ -98,6 +98,23 @@ function get_game($game_name){
 
 }
 
+function get_review_htmls($html){
+    $urls = array();
+    $doc = phpQuery::newDocumentHTML($html);
+    $reviews = $doc->find('a.js-event-tracking');
+    foreach ($reviews as $review) {
+        $pq = pq($review);
+        $urls[] = $pq->text();
+    }
+    return $urls;
+}
+
+function get_gameurl_from_review($html){
+    $doc = phpQuery::newDocumentHTML($html);
+    $url = pq ('li.subnav-list__item subnav-list__item-primary:first-child',$doc)->attr('href');
+    return $url;
+}
+
 function get_gamedata_gamespot($html) {
     $doc = phpQuery::newDocumentHTML($html);
     $array = [
