@@ -98,21 +98,54 @@ function get_game($game_name){
 
 }
 
-function get_review_htmls($html){
+function get_body ($uri){
+    $k = 1;
+    $try = true;
+    $page = array();
+    do {
+        try {
+            $response = Request::get($uri)
+                ->addHeader('User-Agent', useragent())
+                ->followRedirects(20)
+                ->send();
+            $try = false;
+            $page['code'] = $response->code;
+            if($page['code'] == 200){
+                $page['body'] = $response->body;
+            }
+        } catch (\Httpful\Exception\ConnectionErrorException $e) {
+            sleep(5);
+            $try = ++$k < 6;
+        }
+    } while($try);
+
+    return $page['body'];
+}
+
+function get_review_pages ($pages){
     $urls = array();
-    $doc = phpQuery::newDocumentHTML($html);
-    $reviews = $doc->find('a.js-event-tracking');
-    foreach ($reviews as $review) {
-        $pq = pq($review);
-        $urls[] = $pq->text();
+    for($i=1;$i<=$pages;$i++){
+        $urls[] = "http://www.gamespot.com/reviews/ps4/?page=".$i;
     }
     return $urls;
 }
 
+function get_review_htmls($html){
+    $urls =array();
+    $doc = phpQuery::newDocumentHTML($html);
+    $reviews = $doc->find('a.js-event-tracking');
+    foreach ($reviews as $review) {
+        $pq = pq($review);
+        $urls[] = $pq->attr('href');
+    }
+    return $urls;
+
+}
+
 function get_gameurl_from_review($html){
     $doc = phpQuery::newDocumentHTML($html);
-    $url = pq ('li.subnav-list__item subnav-list__item-primary:first-child',$doc)->attr('href');
-    return $url;
+    $url = pq('li.subnav-list__item.subnav-list__item-primary',$doc)->children("a")->attr('href');
+    return "http://www.gamespot.com".$url;
 }
 
 function get_gamedata_gamespot($html) {
