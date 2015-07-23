@@ -8,11 +8,13 @@ $baseDir = dirname($vendorDir);
 return array(
     'predictionio\\' => array($vendorDir . '/predictionio/predictionio/src/predictionio'),
     'Views\\' => array($baseDir . '/app/view'),
+    'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'React\\Promise\\' => array($vendorDir . '/react/promise/src'),
     'GuzzleHttp\\Stream\\' => array($vendorDir . '/guzzlehttp/streams/src'),
     'GuzzleHttp\\Ring\\' => array($vendorDir . '/guzzlehttp/ringphp/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Fetcher\\' => array($baseDir . '/app/fetcher'),
     'Documents\\' => array($baseDir . '/app/model'),
+    'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Controllers\\' => array($baseDir . '/app/controller'),
 );

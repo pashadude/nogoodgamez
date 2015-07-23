@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     $vendorDir . '/react/promise/src/functions_include.php',
-    $baseDir . '/app/fetcher/helpers.php',
+    $baseDir . '/app/fetcher/fetcher.php',
 );
