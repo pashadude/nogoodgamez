@@ -1,0 +1,625 @@
+Index: app/gamez_update.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/gamez_update.php	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ app/gamez_update.php	(revision )
+@@ -84,8 +84,9 @@
+                $updater->updateGame($gamedata);
+                $dm->persist($game);
+                $dm->flush();
+-
++//if you would like to save pictures on your server
++/*
+-               $gq = $finder->findOneItem($game, 'name', $gamedata['name']);
++	       $gq = $finder->findOneItem($game, 'name', $gamedata['name']);
+                $gm = $finder->findById($gq['_id'], $game);
+                $id = $gm->getId();
+                $input = $gm->getPic();
+@@ -98,7 +99,7 @@
+                $dm->flush();
+                var_dump($gm);
+ 
+-
++*/
+ 
+            } else {
+                echo $gamedata['name']."is already in the database";
+@@ -122,4 +123,4 @@
+ //巴莎
+ 
+ 
+-?>
+\ No newline at end of file
++?>
+Index: app/controller/UserViewController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/controller/UserViewController.php	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ app/controller/UserViewController.php	(revision )
+@@ -33,15 +33,12 @@
+     }
+ 
+     public function processLike(DocumentManager $dm, $like){
++        //var_dump ($this->user->getId());
++        //var_dump ($this->game->getName());
+         $liker = new AssessmentUpdateController($this->user->getId() ,$this->game->getName() ,$this->assmnt);
+         $liker->updateAssessment($like, $dm);
+         $dm->persist($this->assmnt);
+         $dm->flush();
+-
+-
+-        $id = $this->user->getId();
+-        $item_id =$this->game->getId();
+-        //$this->prophet->set_like($id, $item_id);
+     }
+ 
+     public function generateNewUserView(DocumentManager $dm, $pane = 'pane1'){
+@@ -56,16 +53,21 @@
+         return $this->view->giveIl($results);
+     }
+ 
+-    public function generateExistingUserView(DocumentManager $dm, $pane){
++    public function generateExistingUserView(DocumentManager $dm, $pane, $session_id){
+         $query = new QueryController($dm);
+-
+-
+         $likes = array();
+         $dislikes = array();
+-        $user_id = $this->user->getId();
+-        $q_support = $query->findOneItem($this->user,'_id',$user_id);
++        $q_support = $query->findOneItem($this->user,'session',$session_id);
++        //var_dump($q_support);
+         $user_id_obj = $q_support['_id'];
++        //var_dump($user_id_obj);
++        //$assmntz = $query->giveDistinctValues($this->assmnt, 'user');
++        //var_dump ($assmntz);
++        $games = $query->giveDistinctValues($this->game, 'name');
++        $k = rand(0,sizeof($games));
++        $gq = $query->findOneItem($this->game,'name',$games[$k]);
+         $aq = $query->findAllItems( $this->assmnt, 'user.$id', $user_id_obj);
++        //var_dump($aq);
+         foreach($aq as $a){
+             $item_id = $a['game']['$id']->{'$id'};
+             if($a['like'] == true){
+@@ -74,15 +76,19 @@
+                 $dislikes[] = $item_id;
+             }
+         }
++        //var_dump($likes);
++        if ($likes!=array()){
+-        $gameid = $this->prophet->retrieve_prediction($likes, $dislikes);
++            $gameid = $this->prophet->retrieve_prediction($likes, $dislikes);
+-
+-
+-/*
+-        $games = $query->giveDistinctValues($this->game, 'name');
+-        $k = rand(0,sizeof($games));
+-        $gq = $query->findOneItem($this->game,'name',$games[$k]);
+-        $gameid = $gq['_id'];*/
+-
++            //var_dump($gameid);
++            if(!is_string($gameid)){
++               $gameid = $gq['_id'];
++            } elseif(strlen($gameid)!=24) {
++               $gameid = $gq['_id'];
++            }
++        } else {
++            $gameid = $gq['_id'];
++        }
++        //var_dump($gameid);
+ 
+         $game = $query->findById($gameid, $this->game);
+         $results['pic'] = $game->getPic();
+@@ -91,4 +97,4 @@
+         return $this->view->giveIl($results);
+     }
+ 
+-} 
+\ No newline at end of file
++} 
+Index: public/liker.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- public/liker.php	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ public/liker.php	(revision )
+@@ -46,10 +46,9 @@
+ $view = new UserView();
+ $query = new QueryController($dm);
+ 
+-$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
+-    'http://localhost:7070',
+-    'http://localhost:8000');
++$prophet = new PredictionController(KEY, 'http://'.ML_SERVER_ADR.':7070', 'http://'.ML_SERVER_ADR.':8000');
+ 
++
+ $game_query = $query->findOneItem($game,'name',$input['gamename']);
+ $game = $query->findById($game_query['_id'], $game);
+ //var_dump($game);
+@@ -68,7 +67,7 @@
+ }
+ 
+ $pane = "pane".$input['pane'];
+-echo $cont->generateExistingUserView($dm,$pane);
++echo $cont->generateExistingUserView($dm,$pane,$current_ssid);
+ 
+ 
+ ?>
+Index: data/psn_gamez_new.csv
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- data/psn_gamez_new.csv	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ data/psn_gamez_new.csv	(revision )
+@@ -5,5 +5,3 @@
+ Dragon Ball: Xenoverse,PS4,2015,Fighting,Namco Bandai Games
+ God Eater 2: Rage Burst,PS4,2015,Action,Namco Bandai Games
+ Rugby 15,PS4,2015,Sports,Bigben Interactive
+-Dragon Quest Heroes,PS4,2015,Action,Square Enix
+-Bladestorm: Nightmare,PS4,2015,Action,Tecmo Koei
+\ No newline at end of file
+Index: app/PredictionItemsInitial.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/PredictionItemsInitial.php	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ app/PredictionItemsInitial.php	(revision )
+@@ -41,30 +41,20 @@
+ $gamez = $query->giveDistinctValues($game, 'name');
+ //var_dump($gamez);
+ 
++$prophet = new PredictionController(KEY,
++    'http://'.ML_SERVER_ADR.':7070',
++    'http://'.ML_SERVER_ADR.':8000');
+ 
+-$prophet = new PredictionController('B72Iu4Nn4IisHoHOFEPgOh2sWvYSMaJ05B7I5E1Gq120qg3AaIJ8hwdmBapToBTm',
+-    'localhost:7070',
+-    'localhost:8000');
+ 
+-
+-
+ foreach ($gamez as $gamename) {
+-     $game = new Game();
+      $gamegenres = array();
+      $gq = $query->findOneItem($game, 'name', $gamename);
+      $gm = $query->findById($gq['_id'], $game);
+      $id = $gm->getId();
+      $genres = $gm->getGenres();
+      $prophet->set_item($id, $genres);
+-
+-     $input = $gm->getPic();
+-     $ftype = substr($input, -3);
+-     if($ftype = "peg"){$ftype  = substr($input, -4);}
+-     $output = '../public/img/games/'.$id.".".$ftype;
+-     file_put_contents($output, file_get_contents($input));
+-     $gm->setPic($output);
+-     $dm->persist($game);
+-     $dm->flush();
++     //var_dump($id);
++     //var_dump($genres);
+ }
+ 
+ $user = new User();
+@@ -97,4 +87,4 @@
+ 
+ 
+ 
+-?>
+\ No newline at end of file
++?>
+Index: app/controller/PredictionController.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/controller/PredictionController.php	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ app/controller/PredictionController.php	(revision )
+@@ -9,9 +9,10 @@
+ namespace Controllers;
+ use predictionio\EventClient;
+ use predictionio\EngineClient;
++use predictionio\PredictionIOAPIError;
+ 
+-
+ class PredictionController {
++
+     private $access_key;
+     private $prediction_server;
+     private $engine_server;
+@@ -31,12 +32,12 @@
+ 
+     public function set_user($id){
+         $result = $this->client->setUser($id);
+-        //print_r($result);
++        print_r($result);
+     }
+ 
+     public function set_item($item_id, $types){
+         $result = $this->client->setItem($item_id, array('itypes'=>$types));
+-        //print_r($result);
++        print_r($result);
+     }
+ 
+     public function retrieve_prediction($like_ids, $dislike_ids){
+@@ -45,8 +46,17 @@
+             'items'=> $like_ids,
+             'blackList'=> $dislike_ids
+         ));
++        /*print_r($this->engine->client);
++        try {
++            $response = $this->engine->getStatus();
++            var_dump($response);
++        } catch (PredictionIOAPIError $e) {
++ 	     echo $e->getMessage();
++	}*/
++       
+         $game_id = $response['itemScores'][0]['item'];
++        //$game_id = null;
+         return $game_id;
+     }
+ 
+-}
+\ No newline at end of file
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ .idea/workspace.xml	(revision )
+@@ -2,30 +2,22 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="f16ec958-0b90-4765-b42b-c454bd0a4cd6" name="Default" comment="">
++      <change type="DELETED" beforePath="$PROJECT_DIR$/public/index.php" afterPath="" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" afterPath="$PROJECT_DIR$/vendor/doctrine/mongodb-odm" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/electrolinux/phpquery" afterPath="$PROJECT_DIR$/vendor/electrolinux/phpquery" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+-    </list>
+-    <list id="0d0ed584-6747-45d1-9349-b4406569c9ac" name="Rejected commit: Default" comment="Prediction server administration centralised&#10;&#10;&#10;">
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/Index.php" afterPath="$PROJECT_DIR$/public/Index.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/PredictionController.php" afterPath="$PROJECT_DIR$/app/controller/PredictionController.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PredictionItemsInitial.php" afterPath="$PROJECT_DIR$/app/PredictionItemsInitial.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controller/UserViewController.php" afterPath="$PROJECT_DIR$/app/controller/UserViewController.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/gamez_update.php" afterPath="$PROJECT_DIR$/app/gamez_update.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/liker.php" afterPath="$PROJECT_DIR$/public/liker.php" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/psn_gamez_new.csv" afterPath="$PROJECT_DIR$/data/psn_gamez_new.csv" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+     </list>
++    <list id="0d0ed584-6747-45d1-9349-b4406569c9ac" name="Rejected commit: Default" comment="Prediction server administration centralised&#10;&#10;&#10;" />
+     <ignored path="nogoodgamez.iws" />
+     <ignored path=".idea/workspace.xml" />
+     <ignored path=".idea/dataSources.local.xml" />
+     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+-    <file path="$PROJECT_DIR$/app/controller/UserViewController.php" ignored="false" />
+-    <file path="$PROJECT_DIR$/app/PredictionItemsInitial.php" ignored="false" />
+-    <file path="$PROJECT_DIR$/app/controller/PredictionController.php" ignored="false" />
+-    <file path="$PROJECT_DIR$/app/gamez_update.php" ignored="false" />
+-    <file path="$PROJECT_DIR$/data/psn_gamez_new.csv" ignored="false" />
+-    <file path="$PROJECT_DIR$/public/liker.php" ignored="false" />
+-    <file path="$PROJECT_DIR$/public/Index.php" ignored="false" />
+     <option name="TRACKING_ENABLED" value="true" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -84,11 +76,11 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
++      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/public/Index.php">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="0.12328767" vertical-offset="2160" max-vertical-offset="3060">
+-              <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
++            <state vertical-scroll-proportion="-4.0" vertical-offset="1620" max-vertical-offset="3060">
++              <caret line="96" column="55" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+               <folding>
+                 <element signature="e#186#218#0#PHP" expanded="true" />
+                 <marker date="1430844743364" expanded="true" signature="2861:2980" placeholder="..." />
+@@ -110,11 +102,11 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="PredictionItemsInitial.php" pinned="false" current-in-tab="false">
++      <file leaf-file-name="PredictionItemsInitial.php" pinned="false" current-in-tab="true">
+         <entry file="file://$PROJECT_DIR$/app/PredictionItemsInitial.php">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state vertical-scroll-proportion="-10.0" vertical-offset="540" max-vertical-offset="1728">
+-              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
++            <state vertical-scroll-proportion="0.54362416" vertical-offset="648" max-vertical-offset="1728">
++              <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+               <folding>
+                 <element signature="e#130#162#0#PHP" expanded="true" />
+               </folding>
+@@ -191,6 +183,7 @@
+         <option value="$PROJECT_DIR$/public/liker.php" />
+         <option value="$PROJECT_DIR$/app/PredictionItemsInitial.php" />
+         <option value="$PROJECT_DIR$/public/Index.php" />
++        <option value="$PROJECT_DIR$/public/index.php" />
+       </list>
+     </option>
+   </component>
+@@ -507,7 +500,19 @@
+       <option name="project" value="LOCAL" />
+       <updated>1430844779097</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="dependencies updated&#10;&#10;&#10;">
++      <created>1430845023373</created>
++      <option name="number" value="00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1430845023373</updated>
++    </task>
++    <task id="LOCAL-00007" summary="new index&#10;&#10;&#10;">
++      <created>1430845282265</created>
++      <option name="number" value="00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1430845282265</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TodoView" selected-index="3">
+@@ -534,22 +539,22 @@
+     <frame x="-1" y="28" width="1368" height="708" extended-state="6" />
+     <editor active="true" />
+     <layout>
+-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32582322" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275563" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
++      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25981873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39688042" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.03652174" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32582322" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32869565" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
++      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
++      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
++      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
++      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
++      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20392749" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
++      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38434783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+@@ -600,7 +605,9 @@
+     <MESSAGE value="added assesment hydrators" />
+     <MESSAGE value="fixed prediction-training bugs" />
+     <MESSAGE value="Prediction server administration centralised&#10;&#10;&#10;" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Prediction server administration centralised&#10;&#10;&#10;" />
++    <MESSAGE value="dependencies updated&#10;&#10;&#10;" />
++    <MESSAGE value="new index&#10;&#10;&#10;" />
++    <option name="LAST_COMMIT_MESSAGE" value="new index&#10;&#10;&#10;" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -609,17 +616,6 @@
+     <watches-manager />
+   </component>
+   <component name="editorHistoryManager">
+-    <entry file="file://$PROJECT_DIR$/app/controller/UserViewController.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1692">
+-          <caret line="69" column="50" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
+-          <folding>
+-            <element signature="e#120#134#0#PHP" expanded="true" />
+-            <marker date="1430844743364" expanded="true" signature="781:782" placeholder="..." />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/public/liker.php">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="1548">
+@@ -1020,16 +1016,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/app/PredictionItemsInitial.php">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="-10.0" vertical-offset="540" max-vertical-offset="1728">
+-          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+-          <folding>
+-            <element signature="e#130#162#0#PHP" expanded="true" />
+-          </folding>
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/public/liker.php">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="-8.740741" vertical-offset="700" max-vertical-offset="1530">
+@@ -1042,8 +1028,8 @@
+     </entry>
+     <entry file="file://$PROJECT_DIR$/public/Index.php">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.12328767" vertical-offset="2160" max-vertical-offset="3060">
+-          <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
++        <state vertical-scroll-proportion="-4.0" vertical-offset="1620" max-vertical-offset="3060">
++          <caret line="96" column="55" selection-start-line="96" selection-start-column="55" selection-end-line="96" selection-end-column="55" />
+           <folding>
+             <element signature="e#186#218#0#PHP" expanded="true" />
+             <marker date="1430844743364" expanded="true" signature="2861:2980" placeholder="..." />
+@@ -1060,6 +1046,16 @@
+             <marker date="1430844743364" expanded="true" signature="3903:3998" placeholder="..." />
+             <marker date="1430844743364" expanded="true" signature="4033:4209" placeholder="..." />
+             <marker date="1430844743364" expanded="true" signature="4049:4191" placeholder="..." />
++          </folding>
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/app/PredictionItemsInitial.php">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.54362416" vertical-offset="648" max-vertical-offset="1728">
++          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
++          <folding>
++            <element signature="e#130#162#0#PHP" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+\ No newline at end of file
+Index: public/index.php
+===================================================================
+--- public/index.php	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
++++ public/index.php	(revision 04fb38ffb7fa9f2607cad60de7bd3fc0bbfa7970)
+@@ -1,143 +0,0 @@
+-<?php
+-error_reporting(E_ALL);
+-ini_set('display_errors', 1);
+-define('DS', DIRECTORY_SEPARATOR);
+-define('ROOT', dirname(dirname(__FILE__)));
+-
+-require_once (ROOT . DS . 'bootstrap.php');
+-
+-
+-use Doctrine\MongoDB\Connection;
+-use Doctrine\ODM\MongoDB\Configuration;
+-use Doctrine\ODM\MongoDB\DocumentManager;
+-use Doctrine\ODM\MongoDB\Mapping\Driver\AnnotationDriver;
+-use Documents\Game;
+-use Documents\User;
+-use Views\UserView;
+-use Documents\Assessment;
+-use Controllers\GameUpdateController;
+-use Controllers\QueryController;
+-use Controllers\AssessmentUpdateController;
+-use Controllers\UserUpdateController;
+-use Controllers\UserViewController;
+-use Controllers\PredictionController;
+-
+-
+-
+-
+-$connection = new Connection();
+-
+-$config = new Configuration();
+-$config->setProxyDir(ROOT.DS.'app/Proxies');
+-$config->setProxyNamespace('Proxies');
+-$config->setHydratorDir(ROOT.DS.'app/Hydrators');
+-$config->setHydratorNamespace('Hydrators');
+-$config->setDefaultDB('nogoodgames');
+-$config->setMetadataDriverImpl(AnnotationDriver::create(ROOT . DS .'app/model'));
+-
+-AnnotationDriver::registerAnnotationClasses();
+-
+-session_start();
+-?>
+-
+-<!DOCTYPE html>
+-<html xml:lang="en" lang="en">
+-
+-<head>
+-    <title>NoGoodGamez - let ai recommend you PS3/PS4 games you would like</title>
+-    <link rel="stylesheet" type="text/css" href="css/main.css">
+-    <meta charset="UTF-8">
+-
+-</head>
+-<!-- This website is built using prediction.io, doctrine mongo odm, Jtinder, pls see my github for sc-->
+-<body>
+-
+-
+-<header>
+-    <hgroup>
+-        <h1>NoGoodGamez</h1>
+-        <h2>let ai recommend you PS3/PS4 games based on games you've liked before</h2>
+-    </hgroup>
+-    <p class="Byline">press like <strong id="liker">&#x2715</strong> or dislike <strong id="disliker">&#x025CB</strong> buttons below to assess the game</p>
+-</header>
+-
+-<div class="wrap">
+-
+-
+-    <div id="tinderslide">
+-        <ul id="gamelist">
+-<?php
+-
+-$current_ssid = session_id();
+-
+-$prophet = new PredictionController('i9Cdde75L4q7ToM5L2vurkVp1uqZg20NXGHC8Hu8rNQijozvPuBh1ndTcNhdmH54',
+-    'http://10.240.235.183:7070',
+-    'http://10.240.235.183:8000');
+-
+-$dm = DocumentManager::create($connection, $config);
+-$user = new User();
+-$query = new QueryController($dm);
+-$response = $query->findOneItem($user,'session',$current_ssid);
+-$view = new UserView();
+-$game = new Game();
+-$assmnt = new Assessment();
+-
+-
+-if($response === NULL){
+-    $updater = new UserUpdateController($user);
+-    $updater->updateRealUser($current_ssid);
+-    $dm->persist($user);
+-    $dm->flush();
+-    $cont = new UserViewController($user, $view, $game, $assmnt, $prophet);
+-    echo $cont->generateNewUserView($dm);
+-} else {
+-    $cont = new UserViewController($user, $view, $game, $assmnt, $prophet);
+-    echo $cont->generateExistingUserView($dm, "pane1",$current_ssid);
+-}
+-
+-
+-?>
+-</ul>
+-        </div>
+-    </div>
+-
+-    <div class="actions">
+-        <a href="#" class="dislike"><i>&#x025CB</i></a>
+-        <a href="#" class="like"><i>&#x2715</i></a>
+-    </div>
+-
+-
+-    <div id="FatFooter">
+-
+-        <aside>
+-            <div class="LeftFloatBox">
+-                <img src="img/PredictionIO-logo.png">
+-            </div>
+-
+-            <div class="LeftFloatBox">
+-                Built with <a href="http://prediction.io">Prediction.io</a> technology
+-            </div>
+-        </aside>
+-        <aside>
+-
+-            <div class="RightFloatBox">
+-                <img src="img/gamespot.png">
+-            </div>
+-
+-            <div class="RightFloatBox">
+-                Built using <a href="http://gamespot.com">gamespot</a> data
+-            </div>
+-        </aside>
+-
+-        <footer>
+-            <p>Created by pashadude a.k.a. パシャ尺八
+-                &nbsp; &bull; &nbsp; Copyright © 2015
+-                &nbsp; &bull; &nbsp;
+-
+-            </p>
+-        </footer>
+-    </div>
+-
+-
+-</body>
+-</html>

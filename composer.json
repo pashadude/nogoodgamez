@@ -17,6 +17,6 @@
 
         },
         
-        "files": ["app/fetcher/helpers.php"]
+        "files": ["app/fetcher/fetcher.php"]
     }
 }
