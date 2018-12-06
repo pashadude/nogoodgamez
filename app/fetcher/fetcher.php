@@ -8,7 +8,7 @@
 include ROOT.DS.'bootstrap.php';
 //include realpath(__DIR__) .DS. 'useragents.php';
 
-//const IGDB_API_KEY = "v0dk4AzcGCc9ok1HcOJZ3p7gG_8LfmQCp3Upsyjvbtg";
+
 
 use \Httpful\Request as Request;
 
@@ -32,7 +32,7 @@ class Fetcher
                 $response = Request::get($url)
                     ->addHeaders(array(
                         'Accept' => 'application/json',
-                        'Authorization' => 'Token token="v0dk4AzcGCc9ok1HcOJZ3p7gG_8LfmQCp3Upsyjvbtg"'
+                        'Authorization' => 'Token token=""'
                     ))
                     ->followRedirects(20)
                     ->send();
